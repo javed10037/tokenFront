@@ -1,0 +1,66 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            
+            
+            <div class="col-md-8 col-md-offset-2">
+                <div class="card">
+                    <form [formGroup]="updateForm" (ngSubmit)="updateUserInfo()" >
+                        <div class="" data-background-color="" style="background: #18d26e; margin-top:-25px;">
+                            <h4 class="card-title" style="text-align:center;font-weight:400;">Update Your Profile</h4>
+                        </div>
+                        <div class="card-content" style="text-align: center;">
+                            
+                            <div class="row">
+                                <label class="col-sm-2 label-on-left" style="padding-top: 30px; font-size:15px;font-weight:500;">First Name</label>
+                                <div class="col-sm-10">
+                                    <div class="form-group label-floating is-empty">
+                                        <label class="control-label"></label>
+                                        <input type="text" class="form-control" value formControlName="firstName"  [(ngModel)]="updateDetails.firstName">
+                                         <div style="color:red" *ngIf="!updateForm.controls['firstName'].valid&&updateForm.controls['firstName'].dirty">
+                                <span *ngIf="updateForm.controls['firstName'].errors['required']">First name is required</span>
+                                <span *ngIf="updateForm.controls['firstName'].errors['minlength']">First name must be atleast 3 characters</span>
+                                <span *ngIf="updateForm.controls['firstName'].errors['pattern']&&!updateForm.controls['firstName'].errors['minlength']">First name should be alphabet </span>
+                            </div>
+                        </div>
+                     </div>
+                    </div>
+                            
+                            <div class="row">
+                                <label class="col-sm-2 label-on-left" style="padding-top: 30px; font-size:15px;font-weight:500;">Last Name</label>
+                                <div class="col-sm-10">
+                                    <div class="form-group label-floating is-empty">
+                                        <label class="control-label"></label>
+                                        <input type="text" class="form-control" value formControlName="lastName"  [(ngModel)]="updateDetails.lastName">
+                                <div style="color:red" *ngIf="!updateForm.controls['lastName'].valid&&updateForm.controls['lastName'].dirty">
+                                <span *ngIf="updateForm.controls['lastName'].errors['required']">Last name is required</span>
+                                <span *ngIf="updateForm.controls['lastName'].errors['minlength']">Last name must be atleast 3 characters</span>
+                                <span *ngIf="updateForm.controls['lastName'].errors['pattern']&&!updateForm.controls['lastName'].errors['minlength']">Last name should be alphabet </span>
+                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-sm-2 label-on-left" style="padding-top: 30px; font-size:15px;font-weight:500;">Email Id</label>
+                                <div class="col-sm-10">
+                                    <div class="form-group label-floating is-empty">
+                                        <label class="control-label"></label>
+                                        <input type="text" class="form-control" value disabled="" formControlName="email"  [(ngModel)]="updateDetails.email">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button class="btn btn-success" style="background:#18d26e;font-weight:500;margin-top: 50px;" [disabled]="!updateForm.valid">
+                            <span class="btn-label">
+                                <i class="material-icons">check</i>
+                            </span>
+                            Update Profile
+                        </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

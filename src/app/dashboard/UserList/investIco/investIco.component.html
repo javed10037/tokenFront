@@ -1,0 +1,300 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="header text-center">
+            <h3 class="title">INVEST ICO</h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-12" style="display: flex;justify-content: center;align-items: center;">
+                <div class="col-lg-7">
+                    <input _ngcontent-c2="" class="form-control my-srch" placeholder="Search.." type="text" [(ngModel)]="filterText">
+                </div>
+                <div class="places-buttons eth-bx-head" style="padding-bottom: 0px;">
+                    <div class="col-lg-3 col-md-12 col-sm-12 wdth-eth" style="width: auto;">
+                        <div class="card card-stats eth-bx">
+                            <div class="card-header" data-background-color="green">
+                                <i class="material-icons" style="font-size: 28px;line-height: 31px;width: auto;height: auto;">style</i>
+                            </div>
+                            <div class="card-content">
+                                <p class="category">TOTAL</p>
+                                <h3 style="margin-left: 100px; " class="card-title" *ngIf="allStatus"> {{tokensList.length ? tokensList.length : '0'}}</h3>
+                                <h3 style="margin-left: 100px; " class="card-title" *ngIf="ongoingStatus"> {{onGoingLIst.length ? onGoingLIst.length : '0'}}</h3>
+                                <h3 style="margin-left: 100px; " class="card-title" *ngIf="ongoingStatus"> {{onGoingLIst.length ? onGoingLIst.length : '0'}}</h3>
+                                <h3 style="margin-left: 100px; " class="card-title" *ngIf="expierStatus"> {{expierList.length ? expierList.length : '0'}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header text-center">
+
+        
+    </div>
+    <div class="nav-center">
+
+        <ul class="nav nav-pills nav-pills-warning nav-pills-icons" role="tablist">
+            <li class="active">
+                <a role="tab" data-toggle="tab" (click)="all()">
+                        All 
+                    </a>
+            </li>
+            <li>
+                <a role="tab" data-toggle="tab" (click)="onGoing()">
+                         Ongoing
+                    </a>
+            </li>
+            <li>
+                <a role="tab" data-toggle="tab" (click)="upCommings()">
+                         Upcomming
+                    </a>
+            </li>
+            <li>
+                <a role="tab" data-toggle="tab" (click)="expier()">
+
+                         Expired
+
+                    </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="row" *ngIf="allStatus">
+
+        <div id="loader1"><img src="./assets/img/orange_circles.gif" style="width: 30%;margin-left: 35%;margin-top: 5%;">
+        </div>
+        <div class="text-center" *ngIf="noToken1">
+            <img src="./assets/img/No-token-Found.png" style="width:500px;margin-left: 2%;margin-top: 7%;">
+        </div>
+
+        <div class="col-lg-4 col-md-6" style="padding-top: 56px;" *ngFor="let token of tokensList | filter:{ tokenTicker: filterText, tokenName: filterText, tokenSupply: filterText} : false | orderBy: 'endTime'">
+
+            <div class="card card-product cards-bx" data-count="3">
+                <div class="card-image" data-header-animation="true">
+                    <a href="#pablo">
+                            <img src={{token.tokenImage}} class="img-fluid" alt="">
+                        </a>
+                </div>
+                <div class="card-actions" *ngIf="!token.completeToken">
+                    <button class="btn btn-green" type="submit" (click)="invest_ICO(token.id)">INVEST
+                        <div class="ripple-container"></div>
+                    </button>
+                </div>
+                <div class="card-actions" *ngIf="token.completeToken">
+                    <button class="btn btn-green" type="submit" (click)="invest_ICO(token.id)" disabled>INVEST
+                        <div class="ripple-container"></div>
+                    </button>
+                </div>
+                <div class="card-content">
+                    <h4 class="card-title">
+                            <a href="#pablo">{{token.tokenName}}</a>
+                        </h4>
+                </div>
+                <div class="card-footer">
+                    <div class="price">
+                        <span>Rate</span>
+                        <h4>{{token.tokenSupply}}</h4>
+                    </div>
+                    <div class="price pull-right">
+                        <span>Token Ticker</span>
+
+                        <h4>{{token.tokenTicker}}</h4>
+                    </div>
+                </div>
+                <div class="card-footer" *ngIf="!token.completeToken">
+                    <div class="price" style="padding: 0 20px;width: 100%;text-align: center;">
+
+                        (GMT + 5:30)
+                        <countdown units="Days|Hours|Minutes|Seconds" end={{token.endTime}}></countdown>
+                    </div>
+                </div>
+                <div class="card-footer" *ngIf="token.completeToken">
+                    <div class="price" style="width: 100%;text-align: center;    margin: 25px 0;">
+
+                        <p style="font-size: 18px;padding-top: 16px;background:  #e91e63;padding:  10px;color: #fff;display:  block;font-weight: 700;">Expired</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="ongoingStatus">
+
+        <div id="loader2"><img src="./assets/img/orange_circles.gif" style="width: 30%;margin-left: 35%;margin-top: 5%;">
+        </div>
+        <div class="text-center" *ngIf="noToken2">
+            <img src="./assets/img/No-token-Found.png" style="width:500px;margin-left: 2%;margin-top: 7%;">
+        </div>
+
+        <div class="col-lg-4 col-md-6" style="padding-top: 56px;" *ngFor="let token of onGoingLIst | filter:{ tokenTicker: filterText, tokenName: filterText, tokenSupply: filterText} : false | orderBy: 'endTime'">
+
+            <div class="card card-product cards-bx" data-count="3">
+                <div class="card-image" data-header-animation="true">
+                    <a href="#pablo">
+                            <img src={{token.tokenImage}} class="img-fluid" alt="">
+                        </a>
+                </div>
+                <div class="card-actions" *ngIf="!token.completeToken">
+                    <button class="btn btn-green" type="submit" (click)="invest_ICO(token.id)">INVEST
+                        <div class="ripple-container"></div>
+                    </button>
+                </div>
+                <div class="card-actions" *ngIf="token.completeToken">
+                    <button class="btn btn-green" type="submit" (click)="invest_ICO(token.id)" disabled>INVEST
+                        <div class="ripple-container"></div>
+                    </button>
+                </div>
+                <div class="card-content">
+                    <h4 class="card-title">
+                            <a href="#pablo">{{token.tokenName}}</a>
+                        </h4>
+                </div>
+                <div class="card-footer">
+                    <div class="price">
+                        <span>Rate</span>
+                        <h4>{{token.tokenSupply}}</h4>
+                    </div>
+                    <div class="price pull-right">
+                        <span>Token Ticker</span>
+
+                        <h4>{{token.tokenTicker}}</h4>
+                    </div>
+                </div>
+                <div class="card-footer" *ngIf="!token.completeToken">
+                    <div class="price" style="padding: 0 20px;width: 100%;text-align: center;">
+
+                        (GMT + 5:30)
+                        <countdown units="Days|Hours|Minutes|Seconds" end={{token.endTime}}></countdown>
+                    </div>
+                </div>
+                <div class="card-footer" *ngIf="token.completeToken">
+
+                    <div class="price" style="padding: 0 20px;width: 100%;text-align: center;    margin: 25px 0;">
+
+                        <p style="font-size: 18px;padding-top: 16px;background:  #e91e63;padding:  10px;color: #fff;display:  block;font-weight: 700;">Finished</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="upcommingStatus">
+
+        <div id="loader3"><img src="./assets/img/orange_circles.gif" style="width: 30%;margin-left: 35%;margin-top: 5%;">
+        </div>
+        <div class="text-center" *ngIf="noToken3">
+            <img src="./assets/img/No-token-Found.png" style="width:500px;margin-left: 2%;margin-top: 7%;">
+        </div>
+
+        <div class="col-lg-4 col-md-6" style="padding-top: 56px;" *ngFor="let token of upComming | filter:{ tokenTicker: filterText, tokenName: filterText, tokenSupply: filterText} : false | orderBy: 'endTime'">
+
+            <div class="card card-product cards-bx" data-count="3">
+                <div class="card-image" data-header-animation="true">
+                    <a href="#pablo">
+                            <img src={{token.tokenImage}} class="img-fluid" alt="">
+                        </a>
+                </div>
+                <div class="card-actions" *ngIf="!token.completeToken">
+                    <button class="btn btn-green" type="submit" (click)="invest_ICO(token.id)">INVEST
+                        <div class="ripple-container"></div>
+                    </button>
+                </div>
+                <div class="card-actions" *ngIf="token.completeToken">
+                    <button class="btn btn-green" type="submit" (click)="invest_ICO(token.id)" disabled>INVEST
+                        <div class="ripple-container"></div>
+                    </button>
+                </div>
+                <div class="card-content">
+                    <h4 class="card-title">
+                            <a href="#pablo">{{token.tokenName}}</a>
+                        </h4>
+                </div>
+                <div class="card-footer">
+                    <div class="price">
+                        <span>Rate</span>
+                        <h4>{{token.tokenSupply}}</h4>
+                    </div>
+                    <div class="price pull-right">
+                        <span>Token Ticker</span>
+
+                        <h4>{{token.tokenTicker}}</h4>
+                    </div>
+                </div>
+                <div class="card-footer" *ngIf="!token.completeToken">
+                    <div class="price" style="padding: 0 20px;width: 100%;text-align: center;">
+
+                        (GMT + 5:30)
+                        <countdown units="Days|Hours|Minutes|Seconds" end={{token.endTime}}></countdown>
+                    </div>
+                </div>
+                <div class="card-footer" *ngIf="token.completeToken">
+
+                    <div class="price" style="padding: 0 20px;width: 100%;text-align: center;margin: 25px 0;">
+
+                        <p style="font-size: 18px;padding-top: 16px;background:  #e91e63;padding:  10px;color: #fff;display:  block;font-weight: 700;">Finished</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="expierStatus">
+
+        <div id="loader4"><img src="./assets/img/orange_circles.gif" style="width: 30%;margin-left: 35%;margin-top: 5%;">
+        </div>
+        <div class="text-center" *ngIf="noToken4">
+            <img src="./assets/img/No-token-Found.png" style="width:500px;margin-left: 2%;margin-top: 7%;">
+        </div>
+
+        <div class="col-lg-4 col-md-6" style="padding-top: 56px;" *ngFor="let token of expierList | filter:{ tokenTicker: filterText, tokenName: filterText, tokenSupply: filterText} : false | orderBy: 'endTime'">
+
+            <div class="card card-product cards-bx" data-count="3">
+                <div class="card-image" data-header-animation="true">
+                    <a href="#pablo">
+                            <img src={{token.tokenImage}} class="img-fluid" alt="">
+                        </a>
+                </div>
+                <div class="card-actions" *ngIf="!token.completeToken">
+                    <button class="btn btn-green" type="submit" (click)="invest_ICO(token.id)">INVEST
+                        <div class="ripple-container"></div>
+                    </button>
+                </div>
+                <div class="card-actions" *ngIf="token.completeToken">
+                    <button class="btn btn-green" type="submit" (click)="invest_ICO(token.id)" disabled>INVEST
+                        <div class="ripple-container"></div>
+                    </button>
+                </div>
+                <div class="card-content">
+                    <h4 class="card-title">
+                            <a href="#pablo">{{token.tokenName}}</a>
+                        </h4>
+                </div>
+                <div class="card-footer">
+                    <div class="price">
+                        <span>Rate</span>
+                        <h4>{{token.tokenSupply}}</h4>
+                    </div>
+                    <div class="price pull-right">
+                        <span>Token Ticker</span>
+
+                        <h4>{{token.tokenTicker}}</h4>
+                    </div>
+                </div>
+                <div class="card-footer" *ngIf="!token.completeToken">
+                    <div class="price" style="padding: 0 20px;width: 100%;text-align: center;">
+
+                        (GMT + 5:30)
+                        <countdown units="Days|Hours|Minutes|Seconds" end={{token.endTime}}></countdown>
+                    </div>
+                </div>
+                <div class="card-footer" *ngIf="token.completeToken">
+                    <div class="price" style="padding: 0 20px;width: 100%;text-align: center;">
+                        <p style="font-size: 18px;padding-top: 16px;background:  #e91e63;padding:  10px;color: #fff;display:  block;font-weight: 700;">Expired</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

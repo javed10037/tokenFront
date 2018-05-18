@@ -1,0 +1,66 @@
+<nav #navbar class="navbar navbar-transparent navbar-absolute">
+    <div class="container-fluid">
+        <!-- <div class="navbar-minimize">
+            <button id="minimizeSidebar" class="btn btn-round btn-white btn-fill btn-just-icon">
+                <i class="material-icons visible-on-sidebar-regular">more_vert</i>
+                <i class="material-icons visible-on-sidebar-mini">view_list</i>
+            </button>
+        </div> -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" (click)="sidebarToggle()">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse">
+            <div (window:resize)="onResize($event)">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                            
+                        </a>
+                    </li>
+                    <li>
+                        <a mattooltip="Remove" aria-describedby="cdk-describedby-message-2" cdk-describedby-host="" ng-reflect-position="below" ng-reflect-message="Remove" data-toggle="modal" data-target="#smallAlertModal-1" style="cursor: pointer;">
+                                <i class="material-icons"></i>
+                            <a  class="log">Logout</a>
+                        </a>
+                    </li>
+                    <li class="separator hidden-lg hidden-md"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="modal fade" id="smallAlertModal-1"  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-small ">
+                                        <div class="modal-content">
+                                            <div class="modal-header md-hdr">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
+                                                <h4 class="modal-title">Are you sure you want to Logout ?</h4>
+                                            </div>
+                                            <div class="modal-body text-center">
+                                                <div class="md-body">
+                                                    <div class="row text-center">
+                                                        <div class="col-md-6">
+                                                            <div class="log-inner-bx-left" data-dismiss="modal">
+                                                                <i class="material-icons" >close</i>
+                                                                 <h4 class="modal-title">Cancel</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="log-inner-bx-right" (click)="logout()" data-dismiss="modal">
+                                                                <i class="material-icons">power_settings_new</i>
+                                                                 <h4 class="modal-title">Logout</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                          
+                                        </div>
+                                    </div>
+                                </div> 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           

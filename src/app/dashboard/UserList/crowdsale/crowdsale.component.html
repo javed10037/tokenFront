@@ -1,0 +1,209 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="projects-5" style="background: #eeeeee;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 ml-auto">
+                        <div class="card" style="background: #fff;">
+                            <div class="sleep-card">
+                                <div class="row">
+                                    
+                                    <div class="bouts-card">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <img src={{tokenData?.tokenImage}}>
+                                            </div>
+                                            <div class="col-md-4 paddleft">
+                                                <h4 class="margbottm0 margtop15">{{tokenData?.tokenName}}</h4>
+                                                <span>{{tokenData?.generalInfo.website}}</span>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="ico-font-color">
+                                                    <i class="fa fa-star fa-2x"></i>
+                                                    <i class="fa fa-star fa-2x"></i>
+                                                    <i class="fa fa-star fa-2x"></i>
+                                                    <i class="fa fa-star fa-2x"></i>
+                                                    <i class="fa fa-star-half-o fa-2x"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="pro-txt">
+                                        <h5 style="border-bottom: 1px solid lightgray;width: 20%;margin-top: 20px;">General Info</h5>
+                                        <p>{{tokenData?.generalInfo.description}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="card card-pricing" style="background: #000 !important;">
+                            <embed style="width: 100%; height: 350px;" src="https://www.youtube.com/embed/fwqa_XYzxdg"></embed>
+                        </div> -->
+                        <!-- Team Start -->
+                        <div class="team-1 " style=" padding: 0px;">
+                            <div class="card">
+                                <div class="row">
+                                    <div class="col-md-12 ml-auto mr-auto text-center">
+                                        <h2>Team</h2>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center" style="padding-bottom:  20px;">
+                                    <div class="col-md-4 ml-1" style=" margin: 5px 0;" *ngFor="let team of tokenData?.generalInfo.team">
+                                        <div class="card-profile card-plain" style="margin-bottom: 0px;">
+                                            <div class="card-avatar" style="margin-bottom: 10px;">
+                                                <a>
+                                                <img class="img img-raised" src={{team?.image}}>
+
+                                                <img class="img img-raised" src="assets/img/emilyz.jpg">
+                                            </a>
+                                            </div>
+                                            <div class="card-body">
+                                                <h4 class="card-title" style="margin-bottom: 15px;">{{team?.linkedinname}}</h4>
+                                                <h6 class="category text-success">{{team?.designation}}</h6>
+                                                <div class="card-footer">
+                                                    <a href="#pablo" class="btn btn-icon btn-success btn-round"><i class="fa fa-linkedin"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   <!-- no data found for team -->
+                                   <!-- <div class="col-md-4 ml-1" style=" margin: 5px 0;" *ngIf={{tokenData.generalInfo.team.length > 0}}>
+                                   	No Team added yet.
+                                   </div> -->
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Road map -->
+                        <div class="row">
+                            <div class="col-md-8 ml-auto mr-auto text-center">
+                                <h2 class="title">Roadmap</h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="main-timeline">
+                                
+                                <div class="timeline" *ngFor="let milestone of tokenData?.generalInfo.milestone">
+                                    <div class="timeline-icon"></div>
+                                    <div class="timeline-content">
+                                        <span class="date">{{milestone?.milestonedate |  date:'MM/dd/yyyy'}}</span>
+                                        <!-- <h5 class="title">Web Desginer</h5> -->
+                                        <p class="description">
+                                            {{milestone?.milestone1}}
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        
+
+
+                         
+
+                        <br>
+                      <!--  <a href="{{ tokenData.whitePaper }}" download="a.pdf" target="_blank" type="application/pdf"> Download </a> -->
+                         <!-- <br>
+                        <a href={{whitePaperImage}} target="_blank" download="a.pdf">Download the pdf</a> -->
+
+     
+
+
+                        <!-- whitepaper -->
+                       <!--  <div class="row">
+                            <div class="col-md-8 ml-auto mr-auto text-center">
+                                <h2 class="title">Whitepaper</h2>
+                                <button class="btn btn-success btn-round pull-center" (click)="download()">Download </button>
+                                <button  class="btn btn-success btn-round pull-center">View </button>
+                            </div>
+                        </div> -->
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p></p>
+                                    </div>
+                                    <!-- 
+                  <div class="modal-footer">
+                   
+                  </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Team Start -->
+                    </div>
+                    <div class="col-md-5 mr-auto">
+                        <div class="card card-blog">
+                            <div class="head-adn">
+                                <div class="head-st-rt">
+                                    <div class="head-ico-img">
+                                        <p style="font-weight: bold; margin: 6px; font-size: 14px;"> <i class="fa fa-thumbs-up" style="font-size: 18px; color: #ffa500;padding-right: 10px;"></i> CROWDSALE</p>
+                                    </div>
+                                </div>
+                                <div class="head-st-rt">
+                                    <p style="margin-bottom: 12px; font-size: 15px; margin-left: 15px;">000 Btc</p>
+                                </div>
+                            </div>
+                            <div class="en-name1">
+                                <p class="pull-left" style="font-weight: bold;">Status</p>
+                                <p class="pull-right"><span style=""> Ongoing</span> <i class="fa fa-refresh" style="font-size: 18px;color: #ffa500;padding-left:  10px;vertical-align:  middle;"></i> </p>
+                            </div>
+                            <div class="en-name1">
+                                <p class="pull-left" style="font-weight: bold;">Goal</p>
+                                <p class="pull-right" style="">{{tokenData?.tokenSupply}}</p>
+                            </div>
+                            <div class="en-name1">
+                            	 <p class="pull-left" style="font-weight: bold;">Crowdsale Details</p>
+                            	 <br/>
+	                            <div *ngFor="let crowd of crowdSaleToken">
+	                                <p style="font-weight: bold;">{{crowd?.tierName}}</p>
+	                                Start Time : <p  style="">{{crowd?.startTime |  date:'MM/dd/yyyy HH:mm:s'}}</p>
+	                                End Time : <p  style="">{{crowd?.endTime |  date:'MM/dd/yyyy HH:mm:s'}}</p>
+                                    status : <p  style="">{{crowd?.status }}</p>
+	                                <br/>
+	                            </div>
+
+                            </div>
+                            <div class="en-name1">
+                                <p class="pull-left" style="font-weight: bold;">Price</p>
+                                <p class="pull-right" style="">1 {{tokenData?.tokenTicker}} = {{1/tokenData?.tokenRate}} ETH</p>
+                            </div>
+                            <div class="my-social-card">
+                                <div class="col-md-12">
+                                    <div class="my-s-icon">
+                                        <a href="#" class="btn btn-icon btn-facebook btn-round"><i class="fa fa-facebook-square"></i></a>
+                                        <a href="#" class="btn btn-icon btn-twitter btn-round margleft30"><i class="fa fa-twitter"></i></a>
+                                        <a href="#" class="btn btn-icon btn-linkedin btn-round margleft30"><i class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="view text-center" style="font-weight: bold; font-size: 14px;">
+                                Follow Us
+                            </div>
+                        </div>
+                        <div class="card card-pricing">
+                            <div class="card-body">
+                                <div class="col-md-12">
+                                    <div class="">
+                                        <h2 class="margbottm10">Buy</h2>
+                                        <p class="margbottm0" style="border-top: 1px solid lightgray;padding-top: 20px;font-weight: 400;">Price : 1ETH = {{tokenData?.tokenRate}} {{tokenData?.tokenTicker}}</p>
+                                    </div>
+                                </div>
+                                <div class="my-bt-card1">
+                                    <a (click)="gotToInvest(tokenData._id,tokenData.tokenAddress)" class="btn btn-success btn-round pull-center">Invest </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

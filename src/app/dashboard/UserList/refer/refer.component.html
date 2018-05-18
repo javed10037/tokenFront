@@ -1,0 +1,140 @@
+<div class="main-content main-reffal">
+   <div class="container-fluid">
+      <div class="card">
+         <div class="card-header text-center">
+            <h3>RESELLER PROGRAM</h3>
+            <h5 class="title">Join Institute</h5>
+         </div>
+         <div class="col-md-12">
+            <div _ class="card crd-nobr" style="box-shadow:  none;">
+               <form action="/" class="form-horizontal ng-untouched ng-pristine ng-valid" method="get">
+                  <div class="card-content">
+                     <div class="row" *ngIf="coupenStatus">
+                        <div class="col-md-12">
+                           <label class="col-sm-5 label-on-right" style="text-align:right;">ENTER CODE :</label>
+                           <div class="col-sm-2">
+                              <div class="form-group label-floating is-empty">
+                                 <label class="control-label"></label>
+                                 <input class="form-control" name="coupon" [(ngModel)]="couponCode" type="text" >
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-md-12" style="text-align: center;">
+                           <button class="btn btn-raised btn-round btn-success" (click)="joinNow()">
+                           Join Now
+                           </button>
+                        </div>
+                     </div>
+
+                        <div class="row" *ngIf="linkStatus">
+                        <div class="col-md-6 col-md-offset-3" style="text-align: center;" >
+                           <div class="card">
+                              <div  class="row">
+                                 <label  class="col-sm-4 label-on-left" style="padding-top: 30px;text-align:right; font-size:15px;font-weight:500;">Enter Link:</label>
+                                 <div  class="col-sm-7">
+                                    <div   class="form-group label-floating is-empty">
+                                       <label  class="control-label"></label>
+              <!--             <input  class="form-control ng-untouched ng-pristine ng-valid" disabled=""
+                                       formcontrolname="email" 
+                                        
+                                       type="text" value={{referData}}> -->
+                                       <input class="form-control" disabled="" name="coupon"  type="text" value={{referData}}>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="social-reff">
+                                 <ul>
+                                    <li> <button class="btn btn-just-icon btn-round btn-facebook">
+                                       <i class="fa fa-facebook"> </i> </button>
+                                    </li>
+                                    <li><button  class="btn btn-just-icon btn-round btn-google">
+                                       <i  class="fa fa-google"> </i>
+                                       </button>
+                                    </li>
+                                    <li ><button  class="btn btn-just-icon btn-round btn-linkedin">
+                                       <i  class="fa fa-linkedin"></i>
+                                       </button>
+                                    </li>
+                                    <li ><button  class="btn btn-just-icon btn-round btn-twitter">
+                                       <i  class="fa fa-twitter"></i>
+                                       </button>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+<!--          <div class="row">
+            <div class="col-md-12" style="padding:0 30px;">
+               <div class="card">
+                  <div class="card-content">
+                     <div class="row">
+                       <div class="col-md-6"><h4 class="card-title lft-lff">STATS</h4></div>
+                       <div class="col-md-6">
+                           <h4 class="card-title rft-lff">EARNING: 0.01 ETH </h4>
+                        </div>
+                      </div>
+                     <div class="content table-responsive">
+                        <table class="table">
+                           <thead class="text-primary">
+                              <tr>
+
+                                 <th>User</th>
+                                 <th>Total Invest</th>
+                                 <th>Share</th>
+                                 <th>Token Slab</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+
+                              <tr>
+                                 <td>Dakota Rice</td>
+                                 <td>Niger</td>
+                                 <td>Oud-Turnhout</td>
+                                 <td class="text-primary">$36,738</td>
+                              </tr>
+                              <tr>
+                                 <td>Minerva Hooper</td>
+                                 <td>Curaçao</td>
+                                 <td>Sinaai-Waas</td>
+                                 <td class="text-primary">$23,789</td>
+                              </tr>
+                              <tr>
+                                 <td>Sage Rodriguez</td>
+                                 <td>Netherlands</td>
+                                 <td>Baileux</td>
+                                 <td class="text-primary">$56,142</td>
+                              </tr>
+                              <tr>
+                                 <td>Philip Chaney</td>
+                                 <td>Korea, South</td>
+                                 <td>Overland Park</td>
+                                 <td class="text-primary">$38,735</td>
+                              </tr>
+                              <tr>
+                                 <td>Doris Greene</td>
+                                 <td>Malawi</td>
+                                 <td>Feldkirchen in Kärnten</td>
+                                 <td class="text-primary">$63,542</td>
+                              </tr>
+                              <tr>
+                                 <td>Mason Porter</td>
+                                 <td>Chile</td>
+                                 <td>Gloucester</td>
+                                 <td class="text-primary">$78,615</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+         </div> -->
+      </div>
+   </div>
+</div>

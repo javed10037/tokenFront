@@ -1,0 +1,186 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="projects-5" style="background: #eeeeee;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 ml-auto">
+                        <div class="card" style="background: #fff;">
+                            <div class="sleep-card">
+                                <div class="row">
+                                    <div class="bouts-card">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <img src={{investData?.tokenImage}}>
+                                            </div>
+                                            <div class="col-md-10 paddleft">
+                                                <h4>{{investData?.tokenName}}</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="pro-txt">
+                                        <p>{{investData?.generalInfo.description}}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row margtop20">
+                                    <div class="col-md-6">
+                                        <h5>Total Supply</h5>
+                                        <span class="colorgray">{{investData?.tokenSupply}}</span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5>Token Holders</h5>
+                                        <span class="colorgray">{{holderCount ? holderCount : '0'}}</span>
+                                    </div>
+                                </div>
+                                <div class="row margtop20 margbottm50">
+                                    <div class="col-md-6">
+                                        <h5>Token Address</h5>
+                                        <span class="colorgray">{{investData?.tokenAddress}}</span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5>Crowdsale Address</h5>
+                                        <span class="colorgray">{{investData?.crowdsaleAddress}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mr-auto">
+                        <div class="my-card-token">
+                            <div class="card card-pricing">
+                                <div class="card-body">
+                                    <p style="text-align: center; color: lightgray; font-size: 16px; margin-bottom: 0px;">Count Hidden</p>
+                                    <h1 class="text-left margbottm0">{{tokenBalance ? tokenBalance :'0.00'}}</h1>
+                                    <h4 class="text-left margbottm0 margtop0">{{investData?.tokenTicker}}</h4>
+                                </div>
+                            </div>
+                            <div class="card card-pricing">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <p style="text-align:center; color: lightgray; font-size: 16px; margin-bottom: 0px; display: inline-block; width: 100%;">Tier End In</p>
+                                        <countdown units="Days | Hours | Minutes | Seconds" end={{investData?.endDate}}></countdown>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card card-pricing">
+                                <div class="card-body">
+                                    <div class="col-md-12">
+                                        <div class="">
+                                            <a href="#" class="btn btn-icon btn-linkedin btn-round"><i class="fa fa-facebook-square"></i></a>
+                                            <a href="#" class="btn btn-icon btn-twitter btn-round margleft30"><i class="fa fa-twitter"></i></a>
+                                            <a href="#" class="btn btn-icon btn-dribbble btn-round margleft30"><i class="fa fa-dribbble"></i></a>
+                                        </div>
+                                        <h5><a>{{investData?.generalInfo.website ? investData?.generalInfo.website :'No website link here.'}}</a></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card" style="background: #fff;">
+                            <div class="sleep-card">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p class="pull-right" style="color: lightgray; width: 100%; text-align: right;margin-bottom: 0px;">Account Funds</p>
+                                        <h4 class="text-right margtop0">{{ethBalance ? ethBalance : '0.00'}} ETH</h4>
+                                    </div>
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-8">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h2>Token Sale</h2>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h2>@{{investData?.tokenRate}} {{investData?.tokenTicker}} /ETH</h2>
+                                            </div>
+                                        </div>
+                                        <form [formGroup]="investForm">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h5>Amount Of Pay Token</h5>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <input type="number" (keypress)="eventHandler($event)" class="form-control" placeholder="Number of Token to Buy" [(ngModel)]="buyingToken.amount" formControlName="amount" (keyup)="enterTokenValue($event)" [min]="0">
+                                                        <span class="pull-right" style="color: lightgray;">~{{calculatedEth ? calculatedEth : '0'}} ETH</span>
+                                                        <div style="color:red" *ngIf="!investForm.controls['amount'].valid&&investForm.controls['amount'].dirty">
+                                                            <span *ngIf="investForm.controls['amount'].errors['required']">Amount is required</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h5>Pay Wire</h5>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-check form-check-radio paddleft ">
+                                                        <label class="form-check-label paddleft">
+                                                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" checked="" value="option1" (change)="handleChange($event,1)">
+                                                            <span class="form-check-sign"></span>
+                                                            <span class="margleft30">ETH Funds</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="btn btn-success btn-round pull-center" data-toggle="modal" data-target="#noticeModalinvest" [disabled]="!investForm.valid"><i class="material-icons">vertical_align_bottom</i>Invest</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="my-bt-card">
+                                        <div class="modal fade" id="noticeModalinvest" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-notice mdbx-wd">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
+                                                        <h5 class="modal-title" id="myModalLabel">Confirm Password</h5>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="instruction">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="card modalch2" style="margin-bottom: 0;">
+                                                                        <form [formGroup]="passwordForm" class="form-horizontal ng-untouched ng-pristine ng-valid">
+                                                                            <div class="card-content">
+                                                                                <div class="row">
+                                                                                    <label class="col-sm-2 label-on-left">Password</label>
+                                                                                    <div class="col-sm-9">
+                                                                                        <div class="form-group label-floating is-empty">
+                                                                                            <label class="control-label"></label>
+                                                                                            <input class="form-control" formControlName="password" [(ngModel)]="passwordDetails.password" type="password" value="">
+                                                                                            <div style="color:red" *ngIf="!passwordForm.controls['password'].valid&&passwordForm.controls['password'].dirty">
+                                                                                                Password is required
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="row">
+                                                                                    <div class="col-sm-12">
+                                                                                        <button type="button" class="btn btn-success btn-round" data-dismiss="modal" [disabled]="!passwordForm.valid" (click)="investInToken()">SUBMIT</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </form>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

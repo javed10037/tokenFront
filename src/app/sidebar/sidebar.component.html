@@ -1,0 +1,116 @@
+
+
+        <div class="logo">
+            <!-- <div class="logo-normal">
+                <a href="https://www.creative-tim.com" class="simple-text">
+                    Creative Tim
+                </a>
+            </div> -->
+
+            <div class="logo-img" >
+            <a>
+                <img href="https://www.kryptual.com" style="cursor: pointer;" src="assets/img/tokenology-logo_1.png"/>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="sidebar-wrapper">
+
+            <div class="user" *ngIf="!isMobileMenu()">
+                
+                <div class="info" style="padding: 0;background-color: transparent !important;">
+                <div class="photo">
+                    <!-- <img src="../assets/img/faces/avatar.jpg" /> -->
+                    <i class="material-icons">account_circle</i>
+                </div>
+                    <a data-toggle="collapse"  class="collapsed"  style="text-transform: capitalize;text-align:left;font-weight: 700;">
+                        <span>
+                            Welcome {{userName}}
+                            <!-- <b class="caret"></b> -->
+                        </span>
+                    </a>
+
+                </div>
+            </div>
+            <div *ngIf="isMobileMenu()">
+
+                <ul class="nav nav-mobile-menu">
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" >
+                            <i class="material-icons">account_circle</i>
+                           
+                             <span>
+                            Welcome {{userName}}
+                            <b class="caret"></b>
+                        </span>
+                        <div class="ripple-container"></div></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                 <a  style="cursor: pointer;"  mattooltip="Remove" aria-describedby="cdk-describedby-message-2" cdk-describedby-host="" ng-reflect-position="below" ng-reflect-message="Remove" data-toggle="modal" data-target="#smallAlertModal">
+                                 <i class="material-icons"></i>
+                                 <a  class="log">Logout</a>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <li class="separator hidden-lg hidden-md"></li>
+                </ul>
+            </div>
+               <div class="btn-grop-dash" *ngIf="accountType">
+        <button class="btn btn-success btn-fill btn-wd btn-cus1" style="width: 90%;margin-top: 10px;margin:0 10px;font-weight: 700;background: #18d26e;" type="submit"  (click)="genrateIco()" >Generate ICO</button>
+     <div class="br-line-dash" style="text-align: center;"><p style="color: #ffffff;margin-top: 10px;font-weight: 700; ">OR</p></div>
+    </div>
+    <div class="btn-grop-dash" >
+    <button class="btn btn-success btn-fill btn-wd btn-cus1" style="margin:0 10px;margin-bottom:30px;width: 90%;background: #18d26e;font-weight: 700;" type="submit"  (click)="InvestIco()">Invest ICO</button>
+    </div>
+            <div class="nav-container">
+                <ul class="nav">
+                    <li routerLinkActive="active" *ngFor="let menuitem of menuItems">
+                        <!--If is a single link-->
+                        <a [routerLink]="[menuitem.path]" *ngIf="menuitem.type === 'link'">
+                            <i class="material-icons">{{menuitem.icontype}}</i>
+                            <p>{{menuitem.title}}</p>
+                        </a>
+                        <!--If it have a submenu-->
+                        <a data-toggle="collapse" style="" href="#{{menuitem.collapse}}" *ngIf="menuitem.type === 'sub'" (click)="updatePS()" >
+                            <i class="material-icons">{{menuitem.icontype}}</i>
+                            <p>{{menuitem.title}}<b class="caret"></b></p>
+                        </a>
+
+                        <!--Display the submenu items-->
+                        <div id="{{menuitem.collapse}}" class="collapse" *ngIf="menuitem.type === 'sub'">
+                            <ul class="nav">
+                                <li routerLinkActive="active" *ngFor="let childitem of menuitem.children">
+                                    <a [routerLink]="[menuitem.path, childitem.path]">
+                                        <span class="sidebar-mini">{{childitem.ab}}</span>
+                                        <span class="sidebar-normal">{{childitem.title}}</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    <div class="modal fade" id="smallAlertModal"  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-small ">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
+                                            </div>
+                                            <div class="modal-body text-center">
+                                                <h5>Are you sure you want to do this? </h5>
+                                            </div>
+                                            <div class="modal-footer text-center">
+                                                <button type="button" class="btn btn-simple" data-dismiss="modal">Never mind</button>
+                                                <button type="button" class="btn btn-success btn-simple" (click)="logout()" data-dismiss="modal">Yes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>

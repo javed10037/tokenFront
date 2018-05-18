@@ -1,0 +1,634 @@
+<div class="main-content home-pg">
+    <nav class="navbar navbar-primary navbar-transparent navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu-example">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+                <a class="navbar-brand" rel="tooltip" title="" data-placement="bottom" data-original-title="Kryptual">
+                   <img id="logo-top-white" src="assets/img/kryptual_logo_white.png" alt="Kryptual" style="width: 175px;">
+                </a>
+                <ul class="nav navbar-nav navbar-right" *ngIf="active">
+                    <li>
+                        <a>
+                            <i class="material-icons">dashboard</i>  Dashboard
+                        </a>
+                    </li>
+
+                    <li>
+                        <a scrollTo href="#contact">
+                            <i class="material-icons">contact_mail</i>Contact us
+                        </a>
+                    </li>
+                    <li>
+                        <a (click)="logout()">
+                         <i class="fa fa-sign-out log"></i>
+                         <a  style="color:white;cursor: pointer;">Logout</a>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right" *ngIf="!active">
+                    <li>
+                        <a>
+                            <i class="material-icons">dashboard</i>  Dashboard
+                        </a>
+                    </li>
+
+                    <li>
+                        <a scrollTo href="#contact">
+                            <i class="material-icons">contact_mail</i>Contact us
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/login']">
+                            <i class="material-icons">account_circle</i> SIGN IN
+                        </a>
+                    </li>
+                    <li class=" active ">
+                        <a [routerLink]="['/signupHome']">
+                            <i class="material-icons">person_add</i> SignUp
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <div class="menu">
+        <!-- Menu icon -->
+        <a class="navbar-brand" rel="tooltip" title="" data-placement="bottom" data-original-title="Kryptual">
+
+                   <img id="logo-top-color" class="" src="assets/img/kryptual_logo_white.png" alt="Kryptual"
+                    style="width: 242px;padding-top: 30px;">
+                </a>
+        <div class="icon-close">
+            <a><i class="material-icons">close</i></a>
+        </div>
+        <!-- Menu -->
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a>
+                    <i class="material-icons">dashboard</i> Dashboard
+                </a>
+            </li>
+            <li>
+                <a>
+                    <i class="material-icons">contact_mail</i>Contact us
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="['/login']">
+                    <i class="material-icons">account_circle</i> SIGN IN </a>
+            </li>
+            <li class=" active ">
+                <a [routerLink]="['/signupHome']">
+                    <i class="material-icons">person_add</i> SignUp
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- Main body -->
+    <div class="jumbotron">
+        <div class="icon-menu">
+            <i class="fa fa-bars"></i>
+        </div>
+    </div>
+    <div class="main-home">
+        <div class="wrapper" style="background: linear-gradient(60deg, #66bb6a, #43a047);">
+            <div class="cd-section" id="headers">
+                <!--     *********     HEADER 1      *********      -->
+                <div style="width: 100%; height: 610px;">
+                    <div class="frame">
+                        <div class="plane-container">
+                            <a target="_blank">
+                                <img  style ="max-width:90% !important" class="plane-image" src="../assets/img/plain.png" alt="kryptual" />
+                            </a>
+                        </div>
+                        <div class="my-type text-center">
+                            <h1 class="text-center">
+                                <p class="typewrite text-center" data-period="2000" data-type='[ "Create Your ICO.", "No Coding Needed.", "Raise With Kryptual" ]'>
+                                    <span class="wrap"></span>
+                                </p>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="clouds">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px" height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud big front slowest">
+                            <path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+                                c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+                                 C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+                                 S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z" />
+                        </svg>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px" height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud distant smaller">
+                            <path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+                                c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+                                C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+                                S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z" />
+                        </svg>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px" height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud small slow">
+                            <path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+                                c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+                                C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+                                S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z" />
+                        </svg>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px" height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud distant super-slow massive">
+                            <path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+                                c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+                                C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+                                S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z" />
+                        </svg>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px" height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud slower">
+                            <path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+                                 c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" style="padding-left: 0.1px;padding-right: 0.1px;">
+            <div class="tkn-list card text-center">
+                <div class="row centerr" style="margin: 0 0 30px 0;">
+                    <div class="col-md-12">
+                        <div class="nav-center">
+                            <ul class="nav nav-pills nav-pills-warning nav-pills-icons" role="tablist">
+                                <li class="active">
+                                    <a role="tab" data-toggle="tab" (click)="all()">
+                                               All
+                                           </a>
+                                </li>
+                                <li>
+                                    <a role="tab" data-toggle="tab" (click)="onGoing()">
+                                                Ongoing
+                                           </a>
+                                </li>
+                                <li>
+                                    <a role="tab" data-toggle="tab" (click)="upCommings()">
+                                                Upcomming
+                                           </a>
+                                </li>
+                                <li>
+                                    <a role="tab" data-toggle="tab" (click)="expier()">
+                                                Expire
+                                           </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <!-- <div class="col-md-5">
+                            <div class="col-md-3">
+                                <button class="btn btn-white" style="box-shadow: none;padding-right: 0;">Filter By</button>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="dropdown">
+                                    <button class="dropdown-toggle btn btn-white btn-round btn-block" data-toggle="dropdown">Dropdown
+                                        <b class="caret"></b>
+                                        <div class="ripple-container-fluid"></div>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-left">
+                                        <li class="dropdown-header">Sort by</li>
+                                        <li>
+                                            <a>Supply</a>
+                                        </li>
+                                        <li>
+                                            <a>Price</a>
+                                        </li>
+                                        <li>
+                                            <a>Date</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="dropdown">
+                                    <button class="dropdown-toggle btn btn-white btn-round btn-block" data-toggle="dropdown">Dropdown
+                                        <b class="caret"></b>
+                                        <div class="ripple-container-fluid"></div>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-left">
+                                        <li class="dropdown-header">--Select--</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <!-- <div class="row animated flash">
+                    <div class="col-md-12 text-center">
+                        <img src="../assets/img/Error-01.png" alt="Error" height="350" width="350">
+                    </div>
+                </div> -->
+                <div class="row" *ngIf="allStatus">
+                    <div id="loader1"><img src="./assets/img/orange_circles.gif" style="width: 20%;height: 55%;margin-left: 0%;margin-top: 2%;">
+                    </div>
+                    <div class="text-center" *ngIf="noToken">
+                        <img src="../assets/img/No-token-Found.png" alt="Error" style="height=" 350 " width="350 ";margin-left: 2%;margin-top: 7%;">
+                    </div>
+                    <div class="col-md-12">
+                        <div class="pricing-page">
+                            <div class="row animated fadeInLeft ">
+                                <div class="col-md-3" *ngFor="let token of tokensList">
+                                    <div class="card card-pricing card-raised">
+                                        <div class="card-content">
+                                            <h4 class="category">BOUTS</h4>
+                                            <div class="img-bx icon-rose">
+                                                <div class="img-in-bx">
+                                                    <img src={{token.tokenImage}} class="img-fluid" alt="">
+                                                </div>
+                                            </div>
+                                            <h3 class="card-title">{{token.tokenName}}</h3>
+                                            <div class="card-description">
+                                                <div class="my-rate-list">
+                                                    <div class="rat-a">
+                                                        <span class="pull-left">
+                                                            Rate
+                                                        </span>
+                                                        <span class="pull-right">Market cap</span>
+                                                    </div>
+                                                    <div class="rat-b">
+                                                        <span class="pull-left">{{token.tokenRate}}</span>
+                                                        <span class="pull-right">{{token.minCap}}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="price" style="padding: 0 20px;width: 100%;float: left; margin-top: 15px;">
+                                                    <h4 style="font-size: 15px;" id="demo4">5d 12h 14m 56s </h4>
+                                                </div>
+
+                                            </div>
+                                            <a class="btn btn-success btn-round" [routerLink]="['/homecrowdsale']">View</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" *ngIf="ongoingStatus">
+                    <div id="loader2"><img src="./assets/img/orange_circles.gif" style="width: 20%;height: 55%;margin-left: 0%;margin-top: 2%;">
+                    </div>
+                    <div class="text-center" *ngIf="noToken">
+                        <img src="../assets/img/No-token-Found.png" alt="Error" style="height=" 350 " width="350 ";margin-left: 2%;margin-top: 7%;">
+                    </div>
+                    <div class="col-md-12">
+                        <div class="pricing-page">
+                            <div class="row animated fadeInLeft ">
+                                <div class="col-md-3" *ngFor="let token of onGoingLIst">
+                                    <div class="card card-pricing card-raised">
+                                        <div class="card-content">
+                                            <h4 class="category">BOUTS</h4>
+                                            <div class="img-bx icon-rose">
+                                                <div class="img-in-bx">
+                                                    <img src={{token.tokenImage}} class="img-fluid" alt="">
+                                                </div>
+                                            </div>
+                                            <h3 class="card-title">{{token.tokenName}}</h3>
+                                            <div class="card-description">
+                                                <div class="my-rate-list">
+                                                    <div class="rat-a">
+                                                        <span class="pull-left">
+                                                            Rate
+                                                        </span>
+                                                        <span class="pull-right">Market cap</span>
+                                                    </div>
+                                                    <div class="rat-b">
+                                                        <span class="pull-left">{{token.tokenRate}}</span>
+                                                        <span class="pull-right">{{token.minCap}}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="price" style="padding: 0 20px;width: 100%;float: left; margin-top: 15px;">
+                                                    <h4 style="font-size: 15px;" id="demo4">5d 12h 14m 56s </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="btn btn-success btn-round">View</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" *ngIf="expierStatus">
+                <div id="loader4"><img src="./assets/img/orange_circles.gif" style="width: 20%;height: 55%;margin-left: 0%;margin-top: 2%;">
+                </div>
+                <div class="text-center" *ngIf="noToken">
+                    <img src="../assets/img/No-token-Found.png" alt="Error" style="height=" 350 " width="350 ";margin-left: 2%;margin-top: 7%;">
+                </div>
+                <div class="col-md-12">
+                    <div class="pricing-page">
+                        <div class="row animated fadeInLeft ">
+                            <div class="col-md-3" *ngFor="let token of expierList">
+                                <div class="card card-pricing card-raised">
+                                    <div class="card-content">
+                                        <h4 class="category">BOUTS</h4>
+                                        <div class="img-bx icon-rose">
+                                            <div class="img-in-bx">
+                                                <img src={{token.tokenImage}} class="img-fluid" alt="">
+                                            </div>
+                                        </div>
+                                        <h3 class="card-title">{{token.tokenName}}</h3>
+                                        <div class="card-description">
+                                            <div class="my-rate-list">
+                                                <div class="rat-a">
+                                                    <span class="pull-left">
+                                                            Rate
+                                                        </span>
+                                                    <span class="pull-right">Market cap</span>
+                                                </div>
+                                                <div class="rat-b">
+                                                    <span class="pull-left">{{token.tokenRate}}</span>
+                                                    <span class="pull-right">{{token.minCap}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="price" style="padding: 0 20px;width: 100%;float: left; margin-top: 15px;">
+                                                <h4 style="font-size: 15px;" id="demo4">5d 12h 14m 56s </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a class="btn btn-success btn-round">View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+
+    <!-- <div class="row">
+                <div class="col-md-12" >
+                    <div class="pricing-page">
+                        <div class="row animated fadeInLeft ">
+                            <div class="col-md-3" *ngFor="let token of tokensList">
+                                <div class="card card-pricing card-raised">
+                                    <div class="card-content">
+                                        <h4 class="category"><img src="../assets/img/pulseicon.png" alt="token1">BOUTS</h4>
+                                        <div class="img-bx icon-rose">
+                                            <div class="img-in-bx">
+                                                <img src="../assets/img/tkn1.jpeg" alt="token1">
+                                            </div>
+                                        </div>
+                                        <h3 class="card-title">{{token.tokenName}}</h3>
+                                        <div class="card-description">
+                                            <div class="my-rate-list">
+                                                <div class="rat-a">
+                                                    <span class="pull-left">
+                                                        Rate
+                                                    </span>
+                                                    <span class="pull-right">Market cap</span>
+                                                </div>
+                                                <div class="rat-b">
+                                                    <span class="pull-left">{{token.tokenRate}}</span>
+                                                    <span class="pull-right">{{token.minCap}}</span>
+                                                </div>
+                                                <div class="price" style="padding: 0 20px;width: 100%;float: left; margin-top: 15px;">
+                                                    <h4 style="font-size: 15px;" id="demo4">5d 12h 14m 56s </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="btn btn-success btn-round">View</a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    <div class="geinlist card text-center ">
+        <div class="row centerr" style="margin: 0 0 30px 0;">
+            <div class="col-md-10">
+                <h2 class="title animated fadeInDown ">Generate. List. Invest.</h2>
+                <h4 class="description animated fadeInDown">Kryptual is a automated wizard for blockchain based ICO-creation platform connecting business owners with investors. Kryptual wanted to simplify ICO-creation, listing and raising process for business owners. Kryptual makes business owners
+                    life easy. Kryptual helps them in raising funds to grow their businesses and focus on their trade strength.</h4>
+            </div>
+        </div>
+        <div class="row animated slideInLeft">
+            <div class="col-md-4 ">
+                <div class="info info-hover">
+                    <div class="icon icon-primary">
+                        <img src="../assets/img/live.png" style="width: 15%;">
+                    </div>
+                    <h4 class="info-title">Create Your ICO</h4>
+                    <p class="description">Now anyone can create an ERC-20 token with Kryptual in less than 3 minutes</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="info info-hover">
+                    <div class="icon icon-success">
+                        <img src="../assets/img/global.png" style="width: 15%;">
+                    </div>
+                    <h4 class="info-title">Empowering Ecosystem</h4>
+                    <p class="description">Built with highest security standards, we bring to users the entire ecosystem at one place</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="info info-hover">
+                    <div class="icon icon-warning">
+                        <img src="../assets/img/enhance.png" style="width: 15%;">
+                    </div>
+                    <h4 class="info-title">Invest In Verified ICOs</h4>
+                    <p class="description">Now invest in the leading scrutinised and audited ICO calls</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="parallax-vi card" style="background-image: url(./assets/img/bc-img1.jpg);">
+        <div class="row">
+            <div class="col-md-12 ">
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/IjB-n35zQXQ?rel=0" frameborder="0" encrypted-media"="" allowfullscreen="">
+
+                                </iframe> -->
+
+                        <iframe src="https://www.youtube.com/embed/IjB-n35zQXQ?rel=0" width="560" height="315" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+                                  </iframe>
+                    </div>
+                    <div class="col-md-6 ml-auto mr-auto text-right animated slideInRight">
+                        <h2 class="title">Revolutionized Fund-Raising</h2>
+                        <h4 class="description ">Kryptual provides a one stop solution for everything related to ICOs such as buying, selling, listing of tokens, in a quick and easy way.</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contactus card" id="contact">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <div class=" card-signup">
+                        <div class="row ">
+                            <div class="col-md-5  animated slideInUp">
+                                <div class="contact-left card-content">
+                                    <h2 class="card-title text-center">Get in Touch</h2>
+                                    <h4 class="description" style="padding-top: 0;">The crypto market never stops, neither do we. For any queries, get in touch with us.</h4>
+                                    <div class="info info-horizontal">
+                                        <div class="icon icon-rose">
+                                            <i class="material-icons">location_on</i>
+                                        </div>
+                                        <div class="description">
+                                            <h4 class="info-title">Find us at the office</h4>
+                                            <p class="description">
+                                                UK -Kemp House,
+                                                <br> 160 City Road, London,
+                                                <br> United Kingdom
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="info info-horizontal">
+                                        <div class="icon icon-primary">
+                                            <i class="material-icons">phone</i>
+                                        </div>
+                                        <div class="description">
+                                            <h4 class="info-title">Give us a ring</h4>
+                                            <p class="description">
+                                                +40(0) 207 689 7888
+                                                <br> Mon - Fri, 8:00-22:00
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5  mrgn animated slideInDown">
+                                <div class="card social card-contact card-raised">
+                                    <div class=" text-center">
+                                        <h3 class="card-title">Contact Us</h3>
+                                    </div>
+                                    <form action="" class="form ng-untouched ng-pristine ng-valid" method="" novalidate="">
+                                        <div class="card-content">
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-user-circle"></i>
+                                                    </span>
+                                                    <div class="form-group is-empty">
+                                                        <input class="form-control" placeholder="First Name..." type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">format_size</i>
+                                                    </span>
+                                                    <div class="form-group is-empty">
+                                                        <input class="form-control" placeholder="Email..." type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">mail_outline</i>
+                                                    </span>
+                                                    <div class="form-group is-empty">
+                                                        <input class="form-control" placeholder="Subject here..." type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group is-empty">
+                                                    <textarea class="form-control" placeholder="Your message" rows="5"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="footer text-center">
+                                            <div class="col-md-6">
+                                                <div class="checkbox">
+                                                    <label>
+                                                                <input checked="" name="optionsCheckboxes" type="checkbox"><span class="checkbox-material"><span class="check"></span></span>
+                                                                <a>I am not a robot</a>.
+                                                            </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6"><a class="btn btn-primary btn-round">Send Message</a></div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer footer-home">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <div class="col-md-3">
+                        <h5 style="color:#f96332">About Kryptual</h5>
+                        <p>Kryptual is an automated wizard for blockchain based ICO-creation platform connecting business owners with investors. Kryptual helps them in raising funds to grow their businesses and focus on their trade strength.</p>
+                    </div>
+                    <div class="col-md-2">
+                        <h5><a routerLink="/reseller">Become a Reseller</a></h5>
+                        <ul class="links-vertical">
+                            <p>Earn money from Kryptual. Refer your friends and set upto 5% out of their transactions</p>
+                        </ul>
+                    </div>
+                    <div class="col-md-2">
+                        <h5><a routerLink="/faq">FAQ</a></h5>
+                        <ul class="links-vertical">
+                            <p>You can always reach out to us. But click on the above to know about frequent queries.</p>
+                        </ul>
+                    </div>
+                    <div class="col-md-2">
+                        <h5><a routerLink="/privacy">Privacy and Policy</a></h5>
+                        <ul class="links-vertical">
+                            <p>We are privacy freaks ourselves and respect yours too. Your secrets are safe with us.</p>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h5><a style="color:#f96332">Subscribe to Newsletter</a></h5>
+                        <p>
+                            Join our newsletter and get news in your inbox every week! We hate spam too, so no worries about this.
+                        </p>
+                        <form class="form form-newsletter" method="post" action="">
+                            <div class="form-group">
+                                <input type="email" id="suscribeemail" name="email" class="form-control" placeholder="Your Email...">
+                            </div>
+                            <button type="button" class="btn btn-primary btn-icon btn-round" name="button" onclick="return getsubscribe();">
+                                        <i _ngcontent-c3="" class="material-icons">mail_outline</i>
+                                    </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row text-center" style="padding-top: 20px;">
+            <div class="col-md-12 centerr">
+                <div class="col-md-1 col-sm-1">
+                    <button class="btn btn-just-icon btn-round btn-twitter">
+                                <i class="fa fa-twitter"></i>
+                            </button>
+                </div>
+                <div class="col-md-1 col-sm-1">
+                    <button class="btn btn-just-icon btn-round btn-facebook">
+                                <i class="fa fa-facebook"> </i>
+                                <div class="ripple-container-fluid"></div>
+                            </button>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="copy-rights">&copy; Copyright 2018 Kryptual All Rights Reserved.</div>
+            </div>
+        </div>
+    </footer>
+</div>

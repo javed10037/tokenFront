@@ -1,0 +1,219 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div _ngcontent-c5="" class="header text-center">
+            <h3 _ngcontent-c5="" class="title">Merchandise</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="display: flex;justify-content: center;align-items: center;">
+                <div class="places-buttons eth-bx-head" style="padding-bottom: 0px;">
+                    <div class="col-lg-3 col-md-12 col-sm-12 wdth-eth" style="width: auto;display: flex; justify-content: center;align-items: center;">
+                        <div class="card card-stats eth-bx">
+                            <div class="card-header" data-background-color="green">
+                                <i class="material-icons" style="font-size: 28px;line-height: 31px;width: auto;height: auto;">account_balance_wallet</i>
+                            </div>
+                            <div class="card-content">
+                                <p class="category">Balance</p>
+                                <h3 class="card-title" style="margin-left: 116px; ">{{ethBalance?ethBalance:'0.00'}} ETH</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12 col-sm-12 wdth-eth" style="width: auto;">
+                        <div class="card card-stats eth-bx">
+                            <div class="card-header" data-background-color="green">
+                                <i class="material-icons" style="font-size: 28px;line-height: 31px;width: auto;height: auto;">style</i>
+                            </div>
+                            <div class="card-content">
+                                <p class="category">Items</p>
+                                <h3 class="card-title" style="margin-left: 100px; ">{{cartProduct.length}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12 col-sm-12 wdth-eth" style="width: auto;">
+                        <div class="card card-stats eth-bx">
+                            <div class="card-header" data-background-color="green">
+                                <i class="material-icons" style="font-size: 28px;line-height: 31px;width: auto;height: auto;">style</i>
+                            </div>
+                            <div class="card-content">
+                                <p class="category">Points</p>
+                                <h3 class="card-title" style="margin-left: 100px; ">0KP</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="z-index: 9;text-align:  center;position:  fixed;right:  0;top: 75px;margin:  0 auto;">
+            <div class="col-md-12">
+                <div class="col-lg-2 col-md-2 col-sm-2 wdth-eth" style="margin-left:  30px;width: auto;">
+                    <!-- <div class="card add-cart-dash" data-background-color="green" style="background: #63a457;margin-top: 0px;">
+                        <div class="dropdown cart-dropdown" style="margin-left: 0;">
+                            <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           (click)="count()" >
+                                    <span  class="cart-icon">
+                                        <i  class="material-icons">shopping_basket</i>
+                                        <span  class="cart-count"> {{cartProduct.length}}</span>
+                                    </span>                                
+                                </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <p class="dropdown-cart-info">You have {{cartProduct.length}} products in your cart.</p>
+                                <div class="cart-dropdowm-action" *ngFor="let item of cartProduct">
+                                    <div class="dropdowm-cart-total"><span>TOTAL:</span> {{this.amount}}</div>
+                                    <a class="btn btn-success" data-target="#checkoutmodal" data-toggle="modal">CHECKOUT&gt;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="add-cart-dash">
+                        <div class="dropdown cart-dropdown">
+                                    <a class="dropdown-toggle" (click)="count()" data-toggle="dropdown" role="button" aria-expanded="false">
+                                        <span class="cart-icon">
+                                             <i  class="material-icons">shopping_basket</i>
+                                            <span class="cart-count"> {{this.cartProduct.length}}</span>
+                                        </span>
+                                        <!-- <i class="fa fa-caret-down"></i> -->
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" >
+                                        <p class="dropdown-cart-info">You have {{this.cartProduct.length}} products in your cart.</p>
+                                        <div class="dropdown-menu-wrapper" *ngFor="let item of cartProduct;let i = index">
+                                            <div class="product">
+                                                <figure class="product-image-container">
+                                                    <a  title="Product Name">
+                                                        <img src="{{item.images}}" alt="Product Image">
+                                                    </a>
+                                                </figure>
+
+                                                <div>
+                                                    <a  class="btn-delete" title="Delete product" role="button" (click)="deleteCart(i)"><i class="material-icons" style="color: #18d26e">close</i></a>
+                                                    <h4 class="product-title"><a >{{item.name}}</a></h4>
+                                                    <div class="product-price-container">
+                                                        <span class="product-price">{{item.price}}</span>
+                                                    </div><!-- End .product-price-container -->
+                                                    <div class="product-qty">Qty : 1</div><!-- End .product-qty -->
+                                                </div><!-- End .product-image-container -->
+                                            </div><!-- End .product- -->
+
+                                            
+                                        </div><!-- End .droopdowm-menu-wrapper -->
+
+                                        <div class="cart-dropdowm-action">
+                                            <div class="dropdowm-cart-total"><span>TOTAL:</span> {{amount}}</div>
+                                            <a class="btn btn-success" data-toggle="modal" data-target="#checkoutmodal" (click)="checkOut()">CHECKOUT></a>
+                                        </div><!-- End .cart-dropdown-action -->
+                                    </div><!-- End .dropdown-menu -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6" style="padding-top: 56px;" *ngFor="let product of products;let i = index">
+                <div class="card card-product cards-bx" data-count="3" style="height: 370px;max-height: 370px !important;">
+                    <div class="card-image" data-header-animation="true">
+                        <a routerLink="">
+                            <img src="{{product.images}}" class="img-fluid" alt="">
+                        </a>
+                    </div>
+                    <div class="card-content" style="width:  68%;text-align:  center;">
+                        <h4 class="card-title">
+                            <a>
+                            {{product.name}}</a>
+                        </h4>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price">
+                            <span>Discount</span>
+                            <h4>{{product.discount?product.discount:'0.0'}}%</h4>
+                        </div>
+                        <div class="price pull-right" style="text-align: right;">
+                            <span>Price</span>
+                            <h4>{{product.price}} ETH</h4>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-md-6">
+                        <div class="price">
+                            <button class="btn btn-green" type="submit" (click)="wishList(product)">Wish List
+                                <div class="ripple-container"></div>
+                            </button>
+                        </div>
+                    </div>
+                     <div class="col-md-6">
+                        <div class="price">
+                            <button class="btn btn-green" type="submit" (click)="addToCart(product)">Add to Cart 
+                                <div class="ripple-container"></div>
+                            </button>
+                        </div>
+                    </div>
+                     
+                    </div>
+                </div>
+                    </div>
+
+                    <div class="card-footer" style="padding-bottom: 30PX;">             
+                        
+                            <button class="btn btn-warning" data-toggle="modal" data-target="#checkoutmodal" type="submit" style="width: 100%" (click)="buyNow(product)">Buy Now
+
+                                <div class="ripple-container"></div>
+                            </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- notice modal -->
+<div class="modal fade"  id="checkoutmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" *ngIf="show">
+    <div class="modal-dialog modal-notice">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
+                <h5 class="modal-title" id="myModalLabel">Please Enter Password</h5>
+            </div>
+            <div class="modal-body">
+
+                <div  class="card-content" style="text-align: center;">
+                    <div  class="row">
+                        <label  class="col-sm-3 label-on-left" style="padding-top: 30px; font-size:14px;font-weight:500;;padding: 33px 0 0 10px;">Current Password</label>
+                        <div  class="col-sm-9">
+                            <div  class="form-group label-floating is-empty">
+                                <label  class="control-label"></label>
+                                <input  class="form-control ng-untouched ng-pristine ng-invalid" [(ngModel)]="currentpassword" placeholder="Current Password" required="" type="password" ng-reflect-required="" ng-reflect-name="currentPassword" ng-reflect-model="">
+                            </div>
+                        </div>
+                    </div>
+                    <button  data-dismiss="modal" class="btn btn-success" style="background:#18d26e;font-weight:500;" (click)="checkOutSubmit(currentpassword)" [disabled]="currentPassword">
+                        <span  class="btn-label">
+
+                                
+                            </span> Sumbit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end notice modal -->
+<div class="modal fade" id="noticeAddtocart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-notice">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
+                <h5 class="modal-title" id="myModalLabel">your Items{{this.cartProduct.length}}</h5>
+                <p> total Amount{{amount}}</p>
+            </div>
+            <div class="modal-body">
+
+                <div  class="card-content" style="text-align: center;">
+
+                    <div *ngFor="let item of cartProduct;let i = index">
+                        <span>{{item.name}}{{item.price}}</span>
+                        <button (click)="deleteCart(i)">delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

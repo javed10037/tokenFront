@@ -1,0 +1,1093 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="col-sm-10 col-sm-offset-1">
+            <!--      Wizard container        -->
+            <div class="wizard-container">
+                <div class="card wizard-card wzd-card" data-color="green" id="wizardProfile">
+                    <form action="" method="" name="icoForm">
+                        <!--        You can switch " data-color="purple" "  with one of the next bright colors: "green", "orange", "red", "blue"       -->
+                        <div class="wizard-header">
+                            <h3 class="wizard-title">
+                                Token Setup
+                            </h3>
+                            <h5>Configure properties of your token. Created token contract will be ERC-20 compatible</h5>
+                        </div>
+                        <div class="wizard-navigation">
+                            <ul>
+                                <li>
+                                    <a href="#General-info" data-toggle="tab">General Info</a>
+                                </li>
+                                <li>
+                                    <a href="#Token-setup" data-toggle="tab">Token Setup</a>
+                                </li>
+                                <li>
+                                    <a href="#Crowdsale-setup" data-toggle="tab">Crowdsale Setup</a>
+                                </li>
+                                <li>
+                                    <a href="#Confirmation" data-toggle="tab">Confirmation</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane" id="General-info">
+                                <div class="row">
+                                    <h3 class="wizard-title text-center">
+                                       CROWDSALE CONTRACT
+                                    </h3>
+                                    <h4 class="info-text">Modern crowdsale strategy with multiple tiers, whitelists, and limits. Recommended for every crowdsale</h4>
+                                    <div class="col-md-4 col-sm-4 text-center">
+                                        <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                                            <div class="fileinput-new thumbnail" *ngIf="!tokImage">
+                                                <img alt="..." src="./assets/img/image_placeholder.jpg">
+                                            </div>
+                                            <div class="fileinput-new thumbnail" *ngIf="tokImage">
+                                                <img alt="..." src={{icowizards.crowdsale.image}}>
+                                            </div>
+                                            <div class="fileinput-preview fileinput-exists thumbnail" style=""></div>
+                                            <div>
+                                                <span class="btn btn-rose btn-round btn-file">
+                                                        <span  class="fileinput-new">TOKEN LOGO</span>
+                                                <span class="fileinput-exists">Change</span>
+                                                <input type="hidden">
+                                                <input name="..." (change)="tokenImage($event)" type="file" accept="image/x-png,image/gif,image/jpeg">
+                                                <div class="ripple-container"></div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">business</i>
+                                            </span>
+                                            <div class="form-group label-floating">
+                                                <label>COMPANY NAME <sup style="color: red">*</sup>
+                                                </label>
+                                                <input name="company" [(ngModel)]="generalInfo.company" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">description</i>
+                                            </span>
+                                            <div class="form-group label-floating">
+                                                <label>DESCRIPTION <sup style="color: red">*</sup>
+                                                </label>
+                                                <input name="description" [(ngModel)]="generalInfo.description" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row br-bottom">
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">video_library</i>
+                                            </span>
+                                            <div class="form-group label-floating">
+                                                <label>VIDEO LINK
+                                                </label>
+                                                <input name="vedio" [(ngModel)]="generalInfo.vedio" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">link</i>
+                                            </span>
+                                            <div class="form-group label-floating">
+                                                <label>WEBSITE LINK
+                                                </label>
+                                                <input name="website" [(ngModel)]="generalInfo.website" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-facebook"></i>
+                                            </span>
+                                            <div class="form-group label-floating">
+                                                <label>FACEBOOK LINK
+                                                </label>
+                                                <input name="facebook" [(ngModel)]="generalInfo.facebook" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-twitter"></i>
+                                            </span>
+                                            <div class="form-group label-floating">
+                                                <label>TWITTER LINK
+                                                </label>
+                                                <input name="twitter" [(ngModel)]="generalInfo.twitter" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-linkedin"></i>
+                                            </span>
+                                            <div class="form-group label-floating">
+                                                <label>LINKEDIN LINK
+                                                </label>
+                                                <input name="linkedin" [(ngModel)]="generalInfo.linkedin" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" style="vertical-align: text-bottom;">
+                                                <i class="fa fa-file"></i>
+                                            </span>
+                                            <div class="form-group label-floating">
+                                                <label>WHITE PAPER
+                                                </label>
+                                                <br>
+                                                <!-- <input name="whitepaper" type="file" class="fileinput-exists" style="border: 0px solid !important;padding: 0px 0 20px 1px !important;position:  relative;opacity:  1;"> -->
+                                                <span class="btn btn-rose btn-round btn-file">
+                                               <span  class="fileinput-new">Choose File</span>
+                                                <input name="..." accept="application/pdf" (change)="whitePaper($event)" type="file">
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="row " style="margin-bottom: 20px " *ngIf="whitepaperStatus">
+                                <div class="col-sm-12">
+                                 <iframe class="whitepaperiframe" [src]='icowizards.crowdsale.whitePaper' width="640" height="360" frameborder="0"
+                                                        webkitallowfullscreen mozallowfullscreen allowfullscreen style="float: left;width: 100%;"></iframe>
+                                                        </div>
+                                </div>
+                                <div class="row br-top">
+                                    <div class="col-sm-12">
+                                        <h4 class="info-text">Team</h4>
+                                        <div class="row cl-bx-right">
+                                            <div class="col-sm-12">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons"></i>
+                                                    </span>
+                                                    <div class="form-group label-floating" *ngIf="teamList">
+                                                        <label>Members :
+                                                        </label>
+                                                        <input name="Teams details" disabled="" placeholder="No Teams available, Please add." type="text" class="form-control">
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3 col-md-6 col-sm-6" *ngFor="let team of icowizards.crowdsale.team ; let i = index">
+                                                            <div class="card card-stats">
+                                                                <div class="card-header">
+                                                                    <img class="picture-src" src={{team.teamImages}} id="wizardPicturePreview" title="">
+                                                                </div>
+                                                                <div class="card-content">
+                                                                    <h4 class="text-center"><b>Name : </b> {{team.name ? team.name : '--'}}</h4>
+                                                                    <h4 class="text-center"><b>Designation : </b> {{team.designation ? team.designation : '--'}}</h4>
+                                                                    <h4 class="text-center"> <b>Linkedin Name : </b> {{team.linkedinname ? team.linkedinname : '--'}}</h4>
+                                                                </div>
+                                                                <div class="card-footer text-center">
+                                                                    <button class="btn btn-danger text-center" (click)="popteam(i)" data-target="#wzd-modal1">Remove
+                                                                        <div class="ripple-container"></div>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="plus-lgt">
+                                                <button class="btn btn-success" (click)="addteam()">
+                                                    <i class="material-icons">add</i>
+                                                    <div class="ripple-container"></div>
+                                                </button>
+                                            </div>
+                                            <div class="close-rgt">
+                                                <div class="modal fade" id="wzd-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-small ">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body text-center">
+                                                                <h5>Are you sure you want to do this? </h5>
+                                                            </div>
+                                                            <div class="modal-footer text-center">
+                                                                <button type="button" class="btn btn-simple" data-dismiss="modal">Never mind</button>
+                                                                <button type="button" class="btn btn-success btn-simple">Yes</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--    end small modal -->
+                                            </div>
+                                        </div>
+                                        <div class="row br-bx" *ngIf="teamCard">
+                                            <div class="close-btm">
+                                                <button class="btn  btn-rose" (click)="closeTeamCard()">
+                                                    <i class="material-icons">close</i>
+                                                    <div class="ripple-container"></div>
+                                                </button>
+                                            </div>
+                                            <div class="save-left">
+                                                <button class="btn btn-success" (click)="pushteam()">
+                                                    <i class="material-icons">save</i>Save Team
+                                                    <div class="ripple-container"></div>
+                                                </button>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4 text-center">
+                                                <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                                                    <div class="fileinput-new thumbnail">
+                                                        <img alt="..." src="./assets/img/image_placeholder.jpg">
+                                                    </div>
+                                                    <div class="fileinput-preview fileinput-exists thumbnail" style=""></div>
+                                                    <div>
+                                                        <span class="btn btn-rose btn-round btn-file">
+                                                       <span  class="fileinput-new">TEAM PROFILE PICTURE</span>
+                                                        <span class="fileinput-exists">Change</span>
+                                                        <input type="hidden">
+                                                        <input (change)="teamImage($event)" name="..." type="file" accept="image/x-png,image/gif,image/jpeg">
+                                                        <div class="ripple-container"></div>
+                                                        </span>
+                                                        <a class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput" href="#pablo"><i  class="fa fa-times"></i> Remove</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">person</i>
+                                                    </span>
+                                                    <div class="form-group label-floating">
+                                                        <label>NAME
+                                                        </label>
+                                                        <input name="teamname" [(ngModel)]="team.teamname" type="text" class="form-control">
+                                                        <div *ngIf="teamselect">
+                                                            <span style="color: red;">please select name</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-linkedin"></i>
+                                                    </span>
+                                                    <div class="form-group label-floating">
+                                                        <label>LINKEDIN NAME
+                                                        </label>
+                                                        <input name="linkedinname" [(ngModel)]="team.linkedinname" type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">description</i>
+                                                    </span>
+                                                    <div class="form-group label-floating">
+                                                        <label>DESIGNATION
+                                                        </label>
+                                                        <input name="designation" [(ngModel)]="team.designation" type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- road map -->
+                                    <div class="col-sm-12">
+                                        <h4 class="info-text">Business Road</h4>
+                                        <div class="row cl-bx-right">
+                                            <div class="col-sm-12">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons"></i>
+                                                    </span>
+                                                    <div class="form-group label-floating" *ngIf="roadmapList">
+                                                        <label>ROADMAP :
+                                                        </label>
+                                                        <input name="Teams details" disabled="" placeholder="No Business RoadMap, Please add." type="text" class="form-control">
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3 col-md-6 col-sm-6" *ngFor="let roadmap of icowizards.crowdsale.milestone ; let i = index">
+                                                            <div class="card card-stats">
+                                                                <div class="card-content">
+                                                                    <h4 class="text-center"><b>MILESTONE DESCRIPTION: </b> {{roadmap.milestone1}}</h4>
+                                                                    <h4 class="text-center"> <b>DATE : </b> {{roadmap.milestonedate}}</h4>
+                                                                </div>
+                                                                <div class="card-footer text-center">
+                                                                    <button class="btn btn-danger text-center" (click)="poproadmap(i)">Remove
+                                                                        <div class="ripple-container"></div>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="plus-lgt">
+                                         
+                                                <button class="btn btn-success" (click)="addroadmap()">
+                                                    <i class="material-icons">add</i>
+                                                    <div class="ripple-container"></div>
+                                                </button>
+                                            </div>
+                                            <div class="close-rgt">
+                                                <div class="modal fade" id="wzd-modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-small ">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
+                                                            </div>
+                                                            <div class="modal-body text-center">
+                                                                <h5>Are you sure you want to do this? </h5>
+                                                            </div>
+                                                            <div class="modal-footer text-center">
+                                                                <button type="button" class="btn btn-simple" data-dismiss="modal">Never mind</button>
+                                                                <button type="button" class="btn btn-success btn-simple">Yes</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--    end small modal -->
+                                            </div>
+                                        </div>
+                                        <div class="row br-bx" *ngIf="roadmapCard">
+                                            <div class="close-btm">
+                                                <button class="btn  btn-rose" (click)="closeRoadMapCard()">
+                                                    <i class="material-icons">close</i>
+                                                    <div class="ripple-container"></div>
+                                                </button>
+                                            </div>
+                                            <div class="save-left">
+                                                <button class="btn btn-success" (click)="pushroadmap()">
+                                                    <i class="material-icons">add_location</i>Save Roadmap
+                                                    <div class="ripple-container"></div>
+                                                </button>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">add_location</i>
+                                                    </span>
+                                                    <div class="form-group label-floating">
+                                                        <label>MILESTONE
+                                                        </label>
+                                                        <input name="milestone1" [(ngModel)]="milestone.milestone1" type="text" class="form-control">
+                                                        <div *ngIf="milesto">
+                                                            <span style="color: red;">please select milestone</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </span>
+                                                    <div class="form-group label-floating">
+                                                        <label>DATE
+                                                        </label>
+                                                        
+                                                         <input [(ngModel)]="milestone.milestonedate" [owlDateTimeTrigger]="dt3" [owlDateTime]="dt3" class="form-control"  name="milestonedate" placeholder="MM/DD/YYYY">
+                                                    <owl-date-time [pickerType]="'calendar'" #dt3></owl-date-time>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="Token-setup">
+                                <div class="row br-bottom">
+                                    <h3 class="wizard-title text-center">
+                                       TOKEN SETUP
+                                    </h3>
+                                    <h4 class="info-text">Configure properties of your token. Created token contract will be ERC-20 compatible</h4>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">account_box</i>
+                                            </span>
+                                            <div class="form-group label-floating">
+                                                <label>NAME <sup style="color: red">*</sup>
+                                                </label>
+                                                <input name="name" [(ngModel)]="token.name" style='text-transform:uppercase' type="text" class="form-control">
+                                                <div *ngIf="sapce">
+                                                    <span style="color:red">Sorry, you are not allowed to enter any spaces</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <small>The name of your token. Will be used by Etherscan and other token browsers. Be afraid of Trademarks.</small>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">filter_center_focus</i>
+                                            </span>
+                                            <div class="form-group label-floating">
+                                                <label>TICKER <sup style="color: red">*</sup>
+                                                </label>
+                                                <input name="ticker" [(ngModel)]="token.ticker" type="text" class="form-control" style='text-transform:uppercase' maxlength="3" id="txt_box">
+                                            </div>
+                                        </div>
+                                        <small>The three letter ticker for your token. There are 17,576 combinations for 26 english letters. Be hurry.</small>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">view_comfy</i>
+                                            </span>
+                                            <div class="form-group label-floating">
+                                                <label>DECIMALS <sup style="color: red">*</sup>
+                                                </label>
+                                                <input name="decimals" [(ngModel)]="token.decimals" type="number" class="form-control" min="0" minlength="1" maxlength="18">
+                                                <div *ngIf="decimalValid">
+                                                    <span style="color: red;">Decimal should not be greater than 18</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <small>Refers to how divisible a token can be, from 0 (not a all divisible) to 18 (pretty much continuous).</small>
+                                    </div>
+                                </div>
+                                <div class="row br-top" style="position: relative;">
+                                    <div class="col-sm-12">
+                                        <h3 class="wizard-title text-center">
+                                            RESERVED TOKENS
+                                        </h3>
+                                    </div>
+                                    <div class="col-sm-12" *ngFor="let resToken of token.reservedTokens; let i = index">
+                                        <div class="card">
+                                            <div class="card-content">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <h5>Address : {{resToken.addr}} </h5>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <h5>Dimensions  : {{resToken.dim}} </h5>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <h5>Value : {{resToken.val}} </h5>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="card-footer pull-right">
+                                                <button class="btn btn-danger" (click)="popreservedToken(i)">Remove
+                                                    <div class="ripple-container"></div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="reserved" *ngIf="reservedToken">
+                                        <div class="col-sm-6">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                <i class="material-icons">home</i>
+                                            </span>
+                                                <div class="form-group label-floating">
+                                                    <label>ADDRESS <sup style="color: red">*</sup>
+                                                    </label>
+                                                    <input name="addr" [(ngModel)]="reservedTokensInput.addr" type="text" class="form-control" id="txt_box1" maxlength="42">
+                                                    <div *ngIf="addStatus">
+                                                        <span style="color: red">Addres should start from 0x and length should be 42</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <small>Address where to send reserved tokens</small>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                <i class="fa fa-money"></i>
+                                            </span>
+                                                <div class="form-group label-floating">
+                                                    <label>VALUE <sup style="color: red">*</sup>
+                                                    </label>
+                                                    <input name="val" [(ngModel)]="reservedTokensInput.val" type="number" class="form-control" minlength="100" min="0">
+                                                </div>
+                                            </div>
+                                            <small>Values in tokens or percents. Don't forget to press + button for each reserved Token</small>
+                                        </div>
+                                        <div class="col-sm-6" style="position: relative;">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                <i class="material-icons">brightness_low</i>
+                                            </span>
+                                                <p class="wizard-title text-center" style="text-align:  left;padding-top: 30px;   padding-left: 8px;">
+                                                    DIMENSIONS : <sup style="color: red">*</sup>
+                                                </p>
+                                                <div class="radio line-blk">
+                                                    <label>
+                                                        <input type="radio" [(ngModel)]="reservedTokensInput.dim" name="dim" value="tokens"><span class="circle"></span><span class="check"></span> Tokens
+                                                    </label>
+                                                </div>
+                                                <div class="radio line-blk">
+                                                    <label>
+                                                        <input checked="checked" type="radio" [(ngModel)]="reservedTokensInput.dim" name="dim" value="percentage" type="radio"><span class="circle"></span><span class="check"></span> Percentage
+                                                    </label>
+                                                </div>
+                                                <small style="margin-left: 15px;">Fixed amount or % of crowdsaled tokens. Will be deposited to the account after fintalization of the crowdsale.</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="card-footer pull-right">
+                                                <button class="btn btn-success" (click)="pushreservedToken()">Save
+                                                    <div class="ripple-container"></div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="plus-lgt" style="top:0;">
+                                        <button class="btn btn-success" (click)="addreservedToken()">
+                                            <i class="material-icons">add</i>
+                                            <div class="ripple-container"></div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Crowdsale-setup  -->
+                            <div class="tab-pane" id="Crowdsale-setup">
+                                <div class="row">
+                                    <div class="col-sm-12 text-center">
+                                        <div class="row add-tier" *ngIf="addBoolean">
+                                            <div class="col-sm-12">
+                                                <div class="plus-lgt" style="top: -35px;right: 0px;left: 22px;text-align: left;">
+                                                    <button class="btn btn-rose" (click)="addTier()">
+                                                        <i class="material-icons" style="padding-right: 5px;">add</i>Add Tier
+                                                        <div class="ripple-container"></div>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h3 class="wizard-title text-center"> CROWDSALE SETUP </h3>
+                                        <h4 class="info-text">The most important and exciting part of the crowdsale process. Here you can define parameters of your crowdsale campaign. </h4>
+                                    </div>
+                                </div>
+                                <div class="row br-bottom">
+                                    <div class="col-sm-12">
+                                        <div class="row cl-bx-right">
+                                            <div class="col-sm-12">
+                                                <div class="row text-center">
+                                                    <div class="col-lg-3 col-md-6 col-sm-6" *ngFor="let tierList of icowizards.crowdsale.crowdsale ; let i = index">
+                                                        <div class="card ">
+                                                            <div class="card-content">
+                                                                <h4 class="text-center"> {{tierList.tier}}</h4>
+                                                                <h4 class="text-center">Start Time - {{tierList.startTime}}</h4>
+                                                                <h4 class="text-center">End Time - {{tierList.endTime}}</h4>
+                                                                <h4 class="text-center">Supply - {{tierList.supply}}</h4>
+                                                            </div>
+                      
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="inner-bx-cwrd">
+                                            <div class="row br-bx" *ngIf="tierCard">
+                                              <div class="close-btm">
+                                                <button class="btn  btn-rose" (click)="closetierbox()">
+                                                    <i class="material-icons">close</i>
+                                                    <div class="ripple-container"></div>
+                                                </button>
+                                            </div>
+                                                <div class="save-left">
+                                                    <button class="btn btn-success" (click)="pushtier()">
+                                                        <i class="material-icons">save</i>Save Tier
+                                                        <div class="ripple-container"></div>
+                                                    </button>
+                                                </div>
+                                                <div class="row  br-bottom ">
+                                                    <div class="col-sm-12">
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">
+                                                                    <i class="material-icons">person_outline</i>
+                                                                </span>
+                                                                <div class="form-group label-floating">
+                                                                    <label>CROWDSALE SETUP NAME <sup style="color: red">*</sup> </label>
+                                                                    <input name="tier" [(ngModel)]="crowdsale.tier" type="text" value="tier 1" class="form-control">
+                                                                </div>
+                                                                <small style="margin-left: 0;">Name of a tier. e.g. PrePreIco PreICO, ICO with bonus A, ICO with bonus B. etc. We simplified that and will increment a number after each tier. </small>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6 ">
+                                                            <div class="input-group"> <span class="input-group-addon">
+                                                                <i class="material-icons">account_balance_wallet</i></span>
+                                                                <div class="form-group label-floating">
+                                                                    <label>WALLET ADDRESS <sup style="color: red">*</sup> </label>
+                                                                    <input name="walletAddress" [(ngModel)]="crowdsale.walletAddress" type="text" class="form-control" disabled>
+                                                                </div>
+                                                                <small style="margin-left: 0;">Where the money goes after investors transactions. Immediately after each transaction. We recommend to setup a multisig wallet with hardware based signers.</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">
+                                                                    <i class="material-icons">timer</i>
+                                                                </span>
+                                                                <div class="form-group label-floating">
+                                                                    <label>START TIME <sup style="color: red">*</sup> </label>
+                                                                    <br>
+                                                                    <input [(ngModel)]="crowdsale.startTime" [min]="min" [owlDateTimeTrigger]="dt11" [owlDateTime]="dt11" #dateTime="ngModel" name="startTime" id='txtDate1' class="form-control" placeholder="MM/DD/YYYY, hh:mm,ss">
+                                                                    <owl-date-time #dt11></owl-date-time>
+                                                                </div>
+                                                                <small style="margin-left: 0;">Date and time when the tier starts. Can't be In the past from the current moment.</small>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">
+                                                                    <i class="material-icons">timer_off</i>
+                                                                </span>
+                                                                <div class="form-group label-floating">
+                                                                    <label>END TIME <sup style="color: red">*</sup> </label>
+                                                                    <br>
+                                                                    <input [(ngModel)]="crowdsale.endTime" [min]="min" [owlDateTimeTrigger]="dtPicker1" #dateTime="ngModel" [owlDateTime]="dtPicker1" class="form-control" name="endTime" placeholder="MM/DD/YYYY, hh:mm,ss" id='txtDate'>
+                                                                    <owl-date-time #dtPicker1></owl-date-time>
+                                                                </div>
+                                                                <small style="margin-left: 0;">Date and time when the tier ends. Can be only in the more.</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">
+                                                                    <i class="material-icons">monetization_on</i>
+                                                                </span>
+                                                                <div class="form-group label-floating">
+                                                                    <label>RATE <sup style="color: red">*</sup> </label>
+                                                                    <input name="rate" [(ngModel)]="pricingStrategy.rate" type="number" class="form-control" min="0">
+                                                                </div>
+                                                                <small style="margin-left: 0;">Exchange rate Ethereum to Tokens. If it 100, then for 1 Ether you can buy MO tokens </small>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">
+                                                                    <i class="material-icons">settings_applications</i>
+                                                                </span>
+                                                                <div class="form-group label-floating">
+                                                                    <label>SUPPLY <sup style="color: red">*</sup> </label>
+                                                                    <input name="supply" [(ngModel)]="crowdsale.supply" type="number" class="form-control" min="0">
+                                                                </div>
+                                                                <small style="margin-left: 0;"> How many tokens will be sold on this tier. Cap of crowdsale equals to sum of supply of all tiers </small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row br-top">
+                                    <div class="col-sm-12  text-center">
+                                        <h4> GLOBAL LIMITS</h4>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">transform</i>
+                                            </span>
+                                            <div class="form-group label-floating">
+                                                <label>INVESTOR MIN CAP
+                                                </label>
+                                                <input name="mincap" [(ngModel)]="inversterMinCap.mincap" type="number" class="form-control" min="0">
+                                                <div *ngIf="mincap">
+                                                    <span style="color:red;">value should be greater than one</span>
+                                                </div>
+                                                <small style="margin-left: 0;">Minimum amount tokens to buy. Not a mininal size of a transaction. If minCap is 1 and user bought 1 token in a previous  transaction and buying 0.1 token it will allow him to buy.</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Confirmation -->
+                            <div class="tab-pane" id="Confirmation">
+                                <div class="row">
+                                    <div class="col-sm-7">
+                                        <div class="col-sm-12">
+                                            <h4 class="info-text"> GENERAL INFORMATION</h4>
+                                        </div>
+                                        <dir class="card" style="padding-left: 10px;">
+                                            <div class="col-md-4 form-group col-sm-4 text-center">
+                                                <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                                                    <div class="fileinput-new thumbnail" *ngIf="!tokImage">
+                                                        <img alt="..." src="./assets/img/image_placeholder.jpg">
+                                                    </div>
+                                                    <div class="fileinput-new thumbnail" *ngIf="tokImage">
+                                                        <img alt="..." src={{icowizards.crowdsale.image}}>
+                                                    </div>
+                                                    <!--  <div class="fileinput-preview fileinput-exists thumbnail" style=""></div> -->
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group label-floating">
+                                                    <label>COMPANY NAME</label>
+                                                    <p>{{generalInfo.company ? generalInfo.company : '--'}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>DESCRIPTION</label>
+                                                    <div class="form-group label-floating is-empty">
+                                                        <p>{{generalInfo.description ? generalInfo.description : '--'}}</p>
+                                                        <span class="material-input"></span></div>
+                                                </div>
+                                            </div>
+                                        </dir>
+                                        <div class="col-sm-12">
+                                            <h5 class="info-text"> SOCIAL LINK</h5>
+                                        </div>
+                                        <div class="card" style="margin-top:0;padding: 20px 15px 0px 0px">
+                                            <div class="col-sm-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                <i class="material-icons">video_library</i>
+                                            </span>
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label">VIDEO LINK </label>
+                                                        <p style="width: 18em;max-height: 20px;margin: 0;padding: 5px 5px 0px 0px;">{{generalInfo.vedio ? generalInfo.vedio : '--'}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                <i class="material-icons">link</i>
+                                            </span>
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label">WEBSITE LINK </label>
+                                                        <p  style="width: 15em;max-height: 20px;margin: 0;padding: 5px 5px 0px 0px;">{{generalInfo.website ? generalInfo.website : '--'}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                <i class="fa fa-facebook"></i>
+                                            </span>
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label">FACEBOOK LINK </label>
+                                                        <p  style="width: 12em;max-height: 20px;margin: 0;padding: 5px 5px 0px 0px;">{{generalInfo.facebook ? generalInfo.facebook : '--'}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                <i class="fa fa-twitter"></i>
+                                            </span>
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label">TWITTER LINK</label>
+                                                        <p  style="width: 11em;max-height: 20px;margin: 0;padding: 5px 5px 0px 0px;">{{generalInfo.twitter ? generalInfo.twitter : '--'}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                <i class="fa fa-linkedin"></i>
+                                            </span>
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label">LINKEDIN LINK</label>
+                                                        <p style="width: 8em;max-height: 20px;margin: 0;padding: 5px 5px 0px 0px;">{{generalInfo.linkedin ? generalInfo.linkedin : '--'}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- close card social ling -->
+                                    </div>
+                                    <div class="col-sm-5">
+                                   
+                                        <div class="form-group label-floating card card-pricing card-raised" style="text-align: left;padding: 10px;">
+
+                                            <div class="card-title">
+                                                <h3 class="text-center">{{ethBalance ? ethBalance : '0.00'}} ETH</h3>
+                                            </div>
+                                            <div class="card-title">
+                                                <h3 class="text-center">ICO Price</h3>
+                                            </div>
+                                            <div class="checkbox">
+                                                <div *ngFor="let item of purchaseItems">
+                                                    <label *ngIf="item.checked">
+                                                        <input ng-init="checked=true" disabled="true" name="optionsCheckboxes" value="1" type="checkbox" ng-model='whitepaper' (change)="selectItems($event,item)" checked><span class="checkbox-material"><span class="check"></span></span> {{item.name}} &nbsp;&nbsp;${{item.price}}
+                                                        <br>
+                                                    </label>
+                                                    <label *ngIf="!item.checked">
+                                                        <input ng-init="checked=true" name="optionsCheckboxes" value="1" type="checkbox" ng-model='whitepaper' (change)="selectItems($event,item)"><span class="checkbox-material"><span class="check"></span></span> {{item.name}}&nbsp;&nbsp;${{item.price}}
+                                                        <br>
+                                                    </label>
+                                                </div>
+                                                <br><span class="text-center" style="cursor: pointer;" (click)=promoclick()> Have you Promo Code?</span>
+                                                <div class="form-group label-floating" *ngIf="promo">
+                                                    <label>Apply </label>
+                                                    <input name="coupon" [(ngModel)]="promoCoupen.coupon" type="text" class="form-control">
+                                                    <span class="pull-right"><button class="btn btn-success" (click)="applyPromo()">Apply</button></span>
+                                                    <br>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer">
+                                                <div class="stats pull-left">
+                                                    <p class="category"><b>Total Charges </b></p>
+                                                </div>
+                                                <div class="stats pull-right">
+                                                    <p class="category"> TOTAL ={{totalValue}} + {{transtFees}} ETH = {{totalValue+transtFees}} $</p>
+                                                </div>
+                                                <br>
+                                                <br>
+                                                <br>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                    <button data-toggle="modal" (click)="checkETHBalance()" class="btn btn-success">
+                                                        <span class="btn-label">
+                                                          <i class="material-icons">check</i>
+                                                      </span> CONFIRM
+                                                   <div class="ripple-container"></div>
+                                                    </button></div>
+                                                    <div class="col-md-6"> <button (click)="saveDraft()" class="btn btn-success">Save as Draft</button></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <!-- <div class="col-sm-12" *ngIf="!noteam">
+                                        <div class="card">
+                                             <div class="card-content">
+                                                   <span style="color: red;text-align: center;">No Team Selected</span>
+                                             </div>
+                                        </div>
+                                    </div> -->
+                                    <div class="col-sm-12" *ngIf="noteam">
+                                        <h4 class="info-text">Teams</h4>
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-6 col-sm-6" *ngFor="let team of icowizards.crowdsale.team">
+                                                <div class="card card-stats">
+                                                    <div class="card-header">
+                                                        <img class="picture-src" id="wizardPicturePreview" src={{team.teamImages}} title="">
+                                                    </div>
+                                                    <div class="card-content">
+                                                        <h4 class="text-center"><b>Name : </b> {{team.name ? team.name : '--'}}</h4>
+                                                        <h4 class="text-center"><b>Designation : </b> {{team.designation ? team.designation : '--'}}</h4>
+                                                        <h4 class="text-center"> <b>Linkedin Name : </b> {{team.linkedinname ? team.linkedinname : '--'}}</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--     <div class="col-sm-12" *ngIf="!nobusiness">
+                                        <div class="card">
+                                             <div class="card-content">
+                                                   <span style="color: red;text-align:center;">business Road</span>
+                                             </div>
+                                        </div>
+                                    </div> -->
+                                    <div class="col-sm-12" *ngIf="nobusiness">
+                                        <h4 class="info-text">business Road</h4>
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-6 col-sm-6" *ngFor="let roadmap of icowizards.crowdsale.milestone">
+                                                <div class="card card-stats">
+                                                    <div class="card-content">
+                                                        <h4 class="text-center"><b>MILESTONE : </b> {{roadmap.milestone1}}</h4>
+                                                        <h4 class="text-center"> <b>DATE : </b> {{roadmap.milestonedate}}</h4>
+                                                    </div>
+                                                    <div class="card-footer text-center">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <h4 class="info-text">TOKEN SETUP</h4>
+                                        <div class="card">
+                                            <div class="col-sm-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                <i class="material-icons">face</i>
+                                            </span>
+                                                    <div class="form-group label-floating">
+                                                        <label>NAME
+                                                        </label>
+                                                        <p>{{token.name}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                <i class="material-icons">description</i>
+                                            </span>
+                                                    <div class="form-group label-floating">
+                                                        <label>TICKER
+                                                        </label>
+                                                        <p>{{token.ticker}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                <i class="material-icons">video_library</i>
+                                            </span>
+                                                    <div class="form-group label-floating">
+                                                        <label>DECIMALS
+                                                        </label>
+                                                        <p>{{token.decimals}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12" *ngIf="resToken">
+                                            <h4 class="wizard-title text-center">
+                                            Reserved Tokens
+                                        </h4>
+                                        </div>
+                                        <!--  <div class="col-sm-12" *ngIf="!resToken">
+                                        <div class="card">
+                                             <div class="card-content">
+                                                   <span style="color: red;text-align: center;">No Team Selected</span>
+                                             </div>
+                                         </div>
+                                      </div> -->
+                                        <div class="col-sm-12" *ngIf="resToken">
+                                            <div class="card">
+                                                <div class="card-content">
+                                                    <div class="row" *ngFor="let resToken of token.reservedTokens">
+                                                        <div class="col-sm-4">
+                                                            <h5>Address : {{resToken.addr}} </h5>
+                                                        </div>
+                                                         <div class="col-sm-4">
+                                                            <h5>DIMENSIONS  :  {{resToken.dim}} </h5>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <h5>Value : {{resToken.val}} </h5>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <h4 class="info-text">Crowdsale Details</h4>
+                                        <div class="card" *ngFor="let  crowdsale of  this.icowizards.crowdsale.crowdsale">
+                                            <div class="col-sm-6">
+                                                <div class="form-group label-floating">
+                                                    <label>CROWDSALE SETUP NAME </label>
+                                                    <p>{{crowdsale.tier}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group label-floating">
+                                                    <label>WALLET ADDRESS
+                                                    </label>
+                                                    <p>{{crowdsale.walletAddress ? crowdsale.walletAddress : '--'}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group label-floating">
+                                                    <label>START TIME </label>
+                                                    <p>{{crowdsale.startTime}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group label-floating">
+                                                    <label>END TIME</label>
+                                                    <p>{{crowdsale.endTime}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group label-floating">
+                                                    <label>RATE</label>
+                                                    <p>{{pricingStrategy.rate}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group label-floating">
+                                                    <label>SUPPLY</label>
+                                                    <p>{{crowdsale.supply}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group label-floating">
+                                            <label>INVESTOR MIN CAP
+                                            </label>
+                                            {{inversterMinCap.mincap}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wizard-footer">
+                            <div class="pull-right">
+                                <input type='button' [disabled]="space || tiker || mincap || decimalValid || checkSavetier" class='btn btn-next btn-fill btn-rose btn-wd' name='next' value='Next' />
+                                <!-- <input type='button' class='btn btn-finish btn-fill btn-rose btn-wd' name='finish' value='Finish' (click)="saveCrowdsale()" /> -->
+                            </div>
+                            <div class="pull-left">
+                                <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Previous' />
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- wizard container -->
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="noticeModalinvest23212" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-notice mdbx-wd">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
+                <h5 class="modal-title" id="myModalLabel">Confirm Password</h5>
+            </div>
+            <div class="modal-body">
+                <div class="instruction">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card modalch2" style="margin-bottom: 0;">
+                                <form [formGroup]="withDrawForm" (ngSubmit)="sendTransaction()" class="form-horizontal ng-untouched ng-pristine ng-valid">
+                                    <div class="card-content">
+                                        <div class="row">
+                                            <label class="col-sm-2 label-on-left">Password</label>
+                                            <div class="col-sm-9">
+                                                <div class="form-group label-floating is-empty">
+                                                    <label class="control-label"></label>
+                                                    <input class="form-control" formControlName="password" [(ngModel)]="withdrawDetails.password" type="password" value="">
+                                                    <div style="color:red" *ngIf="!withDrawForm.controls['password'].valid&&withDrawForm.controls['password'].dirty">
+                                                        Password is required
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <button type="button" class="btn btn-success btn-round" data-dismiss="modal" (click)="checkPassword()">SUBMIT</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

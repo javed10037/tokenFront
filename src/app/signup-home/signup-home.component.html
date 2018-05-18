@@ -1,0 +1,59 @@
+<div class="wrapper wrapper-full-page">
+    <nav class="navbar navbar-primary navbar-transparent navbar-absolute">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu-example">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div class="full-page register-page" filter-color="black">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="card card-signup">
+                        <a style="margin-top: 0px;margin-bottom: 35px;float:  left;width:  100%;text-align: center;"><img href="https://www.kryptual.com" src="assets/img/tokenology-logo_1.png" style="cursor: pointer;width:40%"></a>
+                        <h3 class="card-title text-center">Sign Up</h3>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-5 col-md-offset-1">
+                                <a [routerLink]="['/signup',{'paramKey': 'Investor'}]">
+                                    <p class="text-center" style="padding-top: 45px;"><i class="material-icons snp-hm">attach_money</i></p>
+                                    <h4 class="text-center snp-tx">Investors</h4>
+                                </a>
+                            </div>
+                            <div class="col-md-5 vl">
+                                <a [routerLink]="['/signup',{'paramKey': 'Business'}]">
+                                    <p class="text-center" style="padding-top: 45px;">
+                                        <!-- <img src="./assets/img/inverter.png" style="width: 152px;"> --><i class="material-icons snp-hm">business_center</i></p>
+                                    <h4 class="text-center snp-tx">Corporate</h4>
+                                </a>
+                            </div>
+                            <a _ngcontent-c3="" align="right" style="line-height: 0px;color: Green;text-align:  center;float:  left;width:  100%;padding-top: 20px;" [routerLink]="['/login']">Already have an account?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer text-center">
+            <div class="container">
+                <p class="copyright">
+                    &copy; {{year }}
+                    <a>Kryptual</a>, All rights reserved
+                </p>
+            </div>
+        </footer>
+        <div class="full-page-background" style="background :#4caf50 "></div>
+        <!-- <div class="full-page-background" style="background-image: url(./assets/img/register.jpeg) "></div> -->
+        <style>
+        .vl {
+            border-left: 4px solid #18d36e;
+            height: 252px;
+        }
+        </style>
+    </div>
+</div>

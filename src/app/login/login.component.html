@@ -1,0 +1,60 @@
+<div class="wrapper wrapper-full-page">
+    <div class="full-page login-page" filter-color="black">
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
+                        <form [formGroup]="loginForm">
+                            <div class="card card-login card-hidden">
+                                <div class="card-header text-center" data-background-color="green"> <a href="https://www.kryptual.com"  style="margin-top: 42px;margin-bottom: 25px;float:  left;width:  100%;"><img src="./assets/img/logo.png" style="cursor: pointer;width:230px"></a>
+                                    <h4 class="card-title">Login</h4> </div>
+                                <div class="card-content">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">email</i>
+                                        </span>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Email address</label>
+                                            <input type="email" class="form-control" formControlName="email" [(ngModel)]="loginDetail.email" required />
+                                            <div *ngIf="!loginForm.controls['email'].valid&&loginForm.controls['email'].dirty"> <span style="color:red;">Email is required</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">lock_outline</i>
+                                        </span>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Password</label>
+                                            <input type="password" class="form-control" formControlName="password" [(ngModel)]="loginDetail.password" required />
+                                            <div *ngIf="!loginForm.controls['password'].valid&&loginForm.controls['password'].dirty"><span style="color:red;">Password is required</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer text-center">
+                                    <button type="submit" class="btn btn-success" (click)="login(loginForm.value)" [disabled]="!loginForm.valid">Sign In</button>
+                                </div>
+                                <div class="footer text-center">
+                                    <div class="footer text-center">
+                                        <a class="txt-snp" [routerLink]="['/signupHome']"><span>Don't have an account?</span>Sign up</a>
+                                        <p class="txt-or">or</p><a align="left" class="txt-ft" [routerLink]="['/forgot-password']">Forgot Password?</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <footer class="footer text-center">
+            <div class="container">
+                <p class="copyright">
+                    &copy; {{year }}
+                    <a>Kryptual</a>, All rights reserved
+                </p>
+            </div>
+        </footer>
+         <div class="full-page-background" style="background :#4caf50 "></div>
+       <!--  <div class="full-page-background" style="background-image: url(./assets/img/login.jpeg) "></div> -->
+    </div>
+</div>
